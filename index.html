@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unreal Engine Videos | Ramesh</title>
+  <style>
+    /* 🌈 Global Background & Text */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(270deg, #ff00c8, #00ffe0, #fffb00, #ff6a00, #00ff6a);
+      background-size: 1000% 1000%;
+      animation: rainbowFlow 20s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes rainbowFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 🔮 Header & Navigation */
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      text-align: center;
+      border-bottom: 6px double #fff;
+      box-shadow: 0 0 20px #00ffe0;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #fff;
+      text-shadow: 0 0 10px #ff00c8, 0 0 20px #00ffe0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+
+    nav {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #ff00c8, 0 0 30px #00ffe0;
+    }
+
+    /* 🎥 Video Grid & Cards */
+    #videos {
+      padding: 40px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .video-card {
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 20px #00ffe0;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+      animation: pulseBorder 4s infinite;
+    }
+
+    .video-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 30px #ff00c8;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    @keyframes pulseBorder {
+      0% { box-shadow: 0 0 10px #00ffe0; }
+      50% { box-shadow: 0 0 20px #ff00c8; }
+      100% { box-shadow: 0 0 10px #00ffe0; }
+    }
+
+    /* 🧾 Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #aaa;
+      border-top: 2px solid #fff;
+      box-shadow: 0 0 10px #00ffe0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Unreal Engine Showcase</h1>
+    <p>Watch my cinematic and technical creations in action</p>
+    <nav>
+      <a href="ramw.html">Home</a>
+      <a href="#videos">Videos</a>
+    </nav>
+  </header>
+
+  <section id="videos">
+    <div class="video-grid">
+      <div class="video-card">
+        <h3>Cinematic Cliff Flythrough</h3>
+        <video controls src="video/out.mp4"></video>
+      </div>
+      <div class="video-card">
+        <h3>Cinematic beach</h3>
+        <video controls src="video/output.mp4"></video>
+      </div>
+      <div class="video-card">
+        <h3>Normal fights</h3>
+        <video controls src="video/Scene_1_09_output_high.mp4"></video>
+      </div>
+      <div class="video-card">
+        <h3>Boss Arena FX</h3>
+        <video controls src="video/Scene_1_output_high.mp4"></video>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Ramesh. All rights reserved.</p>
+  </footer>
+</body>
+</html>
