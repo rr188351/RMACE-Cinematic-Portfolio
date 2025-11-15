@@ -1,22 +1,18 @@
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(270deg, #ff00c8, #00ffe0, #fffb00, #ff6a00, #00ff6a);
   background-size: 1000% 1000%;
   animation: rainbowFlow 20s ease infinite;
-  color: #fff;
+  color: #333;
 }
 
 @keyframes rainbowFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-body {
-  font-family: Arial, sans-serif;
-  
-  color: #333;
 }
 
 header {
@@ -25,6 +21,7 @@ header {
   padding: 20px;
   text-align: center;
 }
+
 nav {
   margin-top: 10px;
   padding: 15px 0;
@@ -39,12 +36,6 @@ nav {
   z-index: 1000;
   animation: rainbowFlow 10s ease infinite;
   box-shadow: 0 0 20px #fff;
-}
-
-@keyframes rainbowFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 nav a {
@@ -64,6 +55,7 @@ nav a:hover {
   transform: scale(1.2) rotate(-2deg);
   box-shadow: 0 0 15px #fff, 0 0 30px #ff00c8;
 }
+
 .profile-pic {
   text-align: center;
   margin-bottom: 20px;
@@ -103,6 +95,55 @@ footer {
   background: #222;
   color: #aaa;
 }
+
 html {
   scroll-behavior: smooth;
+}
+
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav a {
+    display: block;
+    width: 90%;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  section {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .project h3 {
+    font-size: 18px;
+  }
+
+  .project p {
+    font-size: 16px;
+  }
+
+  .profile-pic img {
+    width: 120px;
+    height: 120px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
 }
