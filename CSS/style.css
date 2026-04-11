@@ -20,6 +20,36 @@ header {
   padding: 20px;
   text-align: center;
 }
+/* 🔗 Stylish Hyperlink CSS */
+a {
+  color: #00bfff;                /* Base color (sky blue) */
+  font-weight: 600;              /* Slightly bold */
+  transition: all 0.3s ease;     /* Smooth animation */
+  position: relative;
+}
+
+/* Hover effect */
+a:hover {
+  color: #ff4081;                /* Change color on hover (pinkish glow) */
+  transform: scale(1.2);         /* Slight zoom */
+  text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081; /* Glow effect */
+}
+
+/* Optional underline animation */
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #ff4081;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;                   /* Animated underline */
+}
 
 nav {
   margin-top: 10px;
@@ -204,5 +234,6 @@ html {
   header p {
     font-size: 16px;
   }
+
 
 }

@@ -98,6 +98,7 @@ ________________________________________
 • No CMD window, no permission errors, no runtime issues
 🔧 Run Directly
 cd ./RMACEUNIVERSAL.exe
+Downlaod-a <a href="https://github.com/rr188351/Universal-Cloud-DB-Manager-">https://github.com/rr188351/Universal-Cloud-DB-Manager-</a>
       </pre>
     </details>
   </div>
@@ -182,6 +183,7 @@ Plugin packaging for Unreal Marketplace.
 Website showcase with demo GIFs.
 Expanded node types (passive/active/ultimate).
 Multiplayer sync for co‑op RPGs.
+Downlaod-<a href="https://github.com/rr188351/Polished-Skill-tree-UMG/releases/tag/v1.1.2">https://github.com/rr188351/Polished-Skill-tree-UMG/releases/tag/v1.1.2</a>
       </pre>
     </details>
   </div>
@@ -194,15 +196,103 @@ Multiplayer sync for co‑op RPGs.
 Unreal Engine 5 showcase featuring modular combat, cinematic FX, and Nanite-optimized environments.ptimized environments.
 How to play number key 7 to switch magic spell mode left click to fire ,number key 9 for sworld mode attacks are 
 in combo left click,left alt for dash ability and also movement wsad/up down left right key. 
-Downlaod-https://github.com/rr188351/Cinematic-Boss-Fight/releases/tag/v1.0
+Downlaod-<a href="https://github.com/rr188351/Cinematic-Boss-Fight/releases/tag/v1.0">https://github.com/rr188351/Cinematic-Boss-Fight/releases/tag/v1.0</a>
 </pre>
     </details>
   </div>
+    <div class="project">
+    <h3>First-Person Shooting Game</h3>
+    <details>
+      <summary>🎮 View Details</summary>
+      <pre>
+🎮 C++ FPS Shooting Game (Unreal Engine)
+
+## 📌 Objective
+Develop a **First-Person Shooter (FPS)** game in **Unreal Engine (latest version)** using **native C++ APIs only**.  
+The game dynamically spawns interactive boxes based on online JSON data. The player can shoot and damage these boxes, earning points upon destruction.
+
+---
+
+## 🌐 Online JSON Data
+Boxes are spawned from JSON hosted at:  
+[GitHub JSON Link](https://raw.githubusercontent.com/CyrusCHAU/Varadise-Technical-Test/refs/heads/main/data.json)
+
+Each box entry includes:
+- **Type** → For future expansions  
+- **Color** → Applied dynamically to material  
+- **Health** → Initial health value  
+- **Score** → Points awarded upon destruction  
+
+Error handling covers:
+- HTTP request failure  
+- JSON parse errors  
+- Invalid/missing fields  
+
+---
+
+## 🟦 Box Spawning
+- Boxes spawned via `SpawnActor` with collision handling.  
+- Attributes applied using `ApplyBoxStats()` in C++.  
+- Spawner injects **DestroySound** and **DestroyEffect** centrally.  
+- Simple cube mesh used (UE default).  
+
+---
+
+## 🎨 Custom Material
+- Material Instance Dynamic (MID) created with a `Base Color` parameter.  
+- Color parsed from JSON and applied in C++:  
+  ```cpp
+  DynMat->SetVectorParameterValue("Base Color", BoxColor);
+🔫 Shooting Mechanics
+Implemented using line trace/projectile system.
+On hit:
+Box health reduced by 1
+If health ≤ 0 → Box destroyed
+Sound + particle effect triggered
+Score incremented via ShooterGameMode
+🖥️ Scoreboard UI
+Built with UUserWidget (C++ base + UMG extension).
+Displays player’s current score.
+Updates dynamically when a box is destroyed.
+📂 Project Structure
+Source/
+ └── Practce/
+      ├── Public/
+      │    ├── MyClass.h          // BoxActor class (health, score, color, effects)
+      │    ├── BoxSpawner.h       // Spawner class (JSON fetch + spawn logic)
+      │    ├── ShooterGameMode.h  // Game mode (score handling)
+      │    └── ShooterHUD.h       // UI base class
+      │
+      ├── Private/
+      │    ├── MyClass.cpp        // BoxActor implementation (damage, destroy, effects)
+      │    ├── BoxSpawner.cpp     // JSON parsing + spawn logic
+      │    ├── ShooterGameMode.cpp// Score increment logic
+      │    └── ShooterHUD.cpp     // UI update logic
+      │
+      └── Practce.Build.cs        // Build configuration
+✅ Requirements
+All gameplay logic in C++ only
+UMG used only for UI (C++ base class required)
+Default UE assets (cube mesh, projectile)
+Smooth performance
+Clean folder structure & documented code
+📌 Conclusion
+This project demonstrates:
+
+Data-driven gameplay using online JSON
+C++ mastery in Unreal Engine
+Cinematic polish with sound + particle effects
+Recruiter-friendly documentation with modular structure
+Downlaod-<a href="https://github.com/rr188351/Firstpersonshooting/releases/tag/1.0">Dowload Now</a>
+      </pre>
+    </details>
+  </div>
+  
 </section>
 
 <section id="unreal">
   <h2><a href="index.html">Unreal Engine Showcase</a></h2>
-  <button class="hj" onclick="openIndex()"> For Projects Videos Click Me </button>
+  <button class="hj" onclick="openindex()"> For Projects Videos Click Me </button>
   <div class="project">
     <h3>AI Boss Enemy</h3>
     <details>
@@ -217,6 +307,7 @@ Downlaod-https://github.com/rr188351/Cinematic-Boss-Fight/releases/tag/v1.0
       <p>Implemented using Unreal's behavior trees and Blueprint scripting.</p>
     </details>
   </div>
+  
 </section>
 
 <section id="contact">
@@ -229,11 +320,12 @@ Downlaod-https://github.com/rr188351/Cinematic-Boss-Fight/releases/tag/v1.0
 <footer>
   <p>© 2025 Ramesh. All rights reserved.</p>
 </footer>
+
+
+</body>
 <script>
-  function openIndex() {
+  function openindex() {
     window.location.href = "index.html"; 
   }
 </script>
-
-</body>
 </html>
