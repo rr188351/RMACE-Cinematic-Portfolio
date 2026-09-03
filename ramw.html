@@ -3,259 +3,1043 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ramesh | Developer Portfolio</title>
-  <link rel="stylesheet" href="CSS/style.css" />
+  <title>Ramesh | Gameplay Systems Programmer | Unreal Engine 5 | C++ | Python</title>
+  <meta name="description" content="Portfolio of Ramesh — Gameplay / Software Developer. Unreal Engine 5, C++, Blueprint, Gameplay Ability System, Common UI, AI, UMG, Niagara, procedural skill trees, plugin development, Python + MySQL + MongoDB tools, and Figma UI/UX design." />
+  <meta name="author" content="Ramesh" />
+  <meta name="theme-color" content="#05070d" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ramesh | Gameplay Systems Programmer | Unreal Engine 5 | C++ | Python" />
+  <meta property="og:description" content="Gameplay / Software Developer — Unreal Engine 5, C++, Blueprint, GAS, Common UI, AI, UMG, Niagara, Python, MySQL, MongoDB, Figma." />
+  <meta property="og:image" content="Thubnails/op9.png" />
+
+  <link rel="stylesheet" href="CSS/main.css" />
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  <link rel="icon" type="image/png" href="ri.png" />
 </head>
 <body>
-<header>
-  <div class="profile-pic">
-    <img src="ri.png">
-  </div>
-  <h1>Ramesh</h1>
-  <p>Developer | Python • C++ • C • Blueprint • Unreal Engine</p>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#academic">Academic Projects</a>
-    <a href="#personal">Personal Projects</a>
-    <a href="#unreal">Unreal Showcase</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I'm a passionate developer with experience in both software and game development. I specialize in Python, Mysql, C++, and Unreal Engine Blueprint scripting. Also know backend SQL and MongoDB.</p>
-</section>
+  <!-- ================= Navigation ================= -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="ramw.html" aria-label="Ramesh — portfolio home">
+        <span class="brand__mark">RM</span>
+        <span>Ramesh<small>Gameplay / Software Dev</small></span>
+      </a>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>Python</li>
-    <li>Mysql</li>
-    <li>Mongodb</li>
-    <li>C++</li>
-    <li>C</li>
-    <li>Blueprint (Unreal Engine)</li>
-    <li>Unreal Engine</li>
-  </ul>
-</section>
+      <button class="nav__toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
+        </svg>
+      </button>
 
-<section id="academic">
-  <h2>Academic Projects</h2>
-  <div class="project">
-    <h3>Student Database System</h3>
-    <details>
-      <summary>📂 View Details</summary>
-      <p>Built using SQL and Python. Features include CRUD operations, ER diagram design, and reporting tools.</p>
-    </details>
-  </div>
-  <div class="project">
-    <h3>Compiler Design (C++)</h3>
-    <details>
-      <summary>📂 View Details</summary>
-      <p>Implemented lexical analyzer and parser for a mini language.</p>
-    </details>
-  </div>
-</section>
+      <nav class="nav__menu" id="nav-menu" aria-label="Primary navigation">
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#skills">Skills</a>
+        <a class="nav__link" href="#projects">Projects</a>
+        <a class="nav__link" href="figma.html">Figma</a>
+        <a class="nav__link" href="index.html">Unreal Showcase</a>
+        <a class="nav__link" href="#contact">Contact</a>
+        <a class="btn btn--primary btn--sm nav__cta" href="https://github.com/rr188351" target="_blank" rel="noopener">
+          GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <path d="M15 3h6v6" />
+            <path d="M10 14 21 3" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
 
-<section id="personal">
-  <h2>Personal Projects</h2>
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="hero" aria-label="Introduction">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow"><span class="dot" aria-hidden="true"></span> Gameplay Systems · Plugins · UI</p>
+          <h1 class="hero__title">RAMESH</h1>
+          <p class="hero__role">Gameplay / <span>Software Developer</span></p>
+          <p class="hero__desc">
+            Unreal Engine 5.6 developer building gameplay systems, reusable plugins and
+            cinematic environments in C++ and Blueprint — backed by Python, database and UI/UX tooling.
+          </p>
 
-  <div class="project">
-    <h3>Universal DB Manager</h3>
-    <details>
-      <summary>🌐 View Details</summary>
-      <pre>
-🌐 Universal Cloud Database Manager by RMAC
-A cinematic Python GUI suite for secure admin login, cloud database access, and full-stack data operations — blending visual storytelling with backend precision.
-________________________________________
-🎬 Modules Included
-🔐 Admin Login Portal
-• Credential-based access
-• Stylized portal interface with surreal background
-• Entry point to SQL and MongoDB modules
-🧮 iSQL Cloud Manager
-• MySQL/Cloud connection via host, port, user, password
-• Create/load databases and tables
-• Record editor with Insert, Update, Delete, Multi Delete
-• Run raw SQL queries
-• Logout and database switch options
-🍃 MongoDB Cloud Manager
-• Connect via mongodb+srv:// or local URI
-• Create datasets and collections
-• Record editor with full CRUD
-• Delete field, collection, or entire database
-• Logout and database switch options
-________________________________________
-📺 Demo Video
-Watch the full cinematic walkthrough on YouTube:
-🔗 Python Tkinter Project – YouTube
-________________________________________
-📦 Packaging & Deployment
-• Built with PyInstaller (folder-based for Defender compatibility)
-• NSIS installer with custom install path and uninstall support
-• No CMD window, no permission errors, no runtime issues
-🔧 Run Directly
-cd ./RMACEUNIVERSAL.exe
-Downlaod-a <a href="https://github.com/rr188351/Universal-Cloud-DB-Manager-">https://github.com/rr188351/Universal-Cloud-DB-Manager-</a>
-      </pre>
-    </details>
-  </div>
+          <div class="hero__tech" aria-label="Primary technologies">
+            <span class="chip chip--blue">C++</span>
+            <span class="chip chip--blue">Python</span>
+            <span class="chip chip--cyan">C</span>
+            <span class="chip chip--violet">Unreal Engine</span>
+            <span class="chip chip--violet">Blueprint</span>
+            <span class="chip chip--cyan">MySQL</span>
+            <span class="chip chip--cyan">MongoDB</span>
+            <span class="chip chip--violet">Figma</span>
+          </div>
 
-  <div class="project">
-    <h3>Skill Tree UMG</h3>
-    <details>
-      <summary>🎮 View Details</summary>
-      <pre>
-🎮 Procedural Skill Tree System (Unreal Engine)
-A modular, cinematic skill tree framework built in Unreal Engine 5.6.
-Designed for RPGs and action games, this system supports procedural node generation, save/load persistence, and cinematic UI polish.
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">
+              View Projects
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+            <a class="btn btn--ghost" href="index.html">View Unreal Showcase</a>
+            <a class="btn btn--ghost" href="figma.html">View Figma Work</a>
+            <a class="btn btn--ghost" href="https://github.com/rr188351" target="_blank" rel="noopener">
+              GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <path d="M15 3h6v6" /><path d="M10 14 21 3" />
+              </svg>
+            </a>
+          </div>
 
-📑 Index
-Overview
-Core Features
-Architecture
-Procedural Generation
-Save System
-UI & FX
-Controls
-Customization
-Future Plans
+          <div class="hero__stats">
+            <div class="hero__stat"><strong>5</strong><span>Featured Projects</span></div>
+            <div class="hero__stat"><strong>9</strong><span>Cinematic Showcases</span></div>
+            <div class="hero__stat"><strong>2</strong><span>UI/UX Projects</span></div>
+            <div class="hero__stat"><strong>12</strong><span>Public Repositories</span></div>
+          </div>
+        </div>
 
-📝 Overview
-This skill tree system is data‑driven and procedurally generated.
-No manual node placement required — simply add entries in a DataTable, and the system auto‑creates nodes with connections, icons, and behaviors.
+        <div class="hero__portrait">
+          <span class="ring" aria-hidden="true"></span>
+          <img src="ri.png" alt="Portrait of Ramesh — Gameplay / Software Developer" />
+        </div>
+      </div>
+    </section>
 
-🚀 Core Features
-Procedural Node Generation
-Nodes auto‑spawn from DataTable entries (ID, Name, Icon, Prerequisites, Flags).
-Save Game State
-Learned/unlearned nodes persist across sessions.
-Learnable/Unlearnable Flags
-Dynamic conditions toggle skill availability.
-Hover FX + Animations
-Glow, spin, circle‑to‑hex transform, sound cues.
-Skill Unlock FX
-Niagara particle bursts themed per skill.
-Zoom/Pan Controls
-Smooth viewport navigation with auto‑center (0.7s snap).
-Single Component Control
-All behaviors centralized in SkillTreeManager.
 
-🏗 Architecture
-SkillTreeManager (central component)
+    <!-- ================= About ================= -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">01 · About</span>
+          <h2 class="section__title" id="about-title">About <em>Me</em></h2>
+        </div>
+
+        <div class="glass about-card reveal">
+          <div class="about-card__text">
+            <p class="lead">I'm a passionate developer with experience in both software and game development.</p>
+            <div class="about-more" id="about-more" hidden>
+              <p>I specialize in Python, MySQL, C++, and Unreal Engine Blueprint scripting, and I also work with backend SQL
+                and MongoDB. My work focuses on gameplay systems, Unreal Engine UI (UMG / Common UI), reusable plugin
+                development, AI behavior and data-driven tools — alongside an additional UI/UX design practice in Figma.</p>
+            </div>
+            <button type="button" class="link-btn js-about-toggle" aria-expanded="false" aria-controls="about-more">
+              Read More <span class="arr" aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="about-meta">
+            <h4>Focus Areas</h4>
+            <div class="tags">
+              <span class="chip chip--blue">Gameplay Systems</span>
+              <span class="chip chip--violet">Unreal UI &amp; Plugin Development</span>
+              <span class="chip chip--cyan">AI &amp; Behavior Trees</span>
+              <span class="chip chip--blue">Gameplay Ability System</span>
+              <span class="chip chip--violet">Databases &amp; Tools</span>
+              <span class="chip chip--cyan">UI/UX Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Skills ================= -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">02 · Skills</span>
+          <h2 class="section__title" id="skills-title">Skills &amp; <em>Technologies</em></h2>
+          <p class="section__lead">Core tools across gameplay programming, software development, databases and design.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="glass skill-card reveal">
+            <div class="skill-card__head">
+              <span class="skill-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="m8 7-5 5 5 5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="m16 7 5 5-5 5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="m13 4-2 16" stroke-linecap="round" />
+                </svg>
+              </span>
+              <h3>Programming<small>Languages</small></h3>
+            </div>
+            <div class="tags">
+              <span class="chip chip--blue">C++</span>
+              <span class="chip chip--blue">Python</span>
+              <span class="chip chip--cyan">C</span>
+            </div>
+          </article>
+
+          <article class="glass skill-card reveal reveal-delay-1">
+            <div class="skill-card__head">
+              <span class="skill-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M17.3 5H6.7a4 4 0 0 0-4 3.6L2 15a3 3 0 0 0 5.4 1.9L9 14.5h6l1.6 2.4A3 3 0 0 0 22 15l-.7-6.4a4 4 0 0 0-4-3.6z" stroke-linejoin="round" />
+                  <path d="M6 12h4M8 10v4" stroke-linecap="round" />
+                  <circle cx="15.5" cy="11.5" r="1" />
+                  <circle cx="17.5" cy="13.5" r="1" />
+                </svg>
+              </span>
+              <h3>Game Development<small>Unreal Engine</small></h3>
+            </div>
+            <div class="tags">
+              <span class="chip chip--violet">Unreal Engine 5.6</span>
+              <span class="chip chip--violet">Blueprint</span>
+              <span class="chip chip--violet">Gameplay Ability System (GAS)</span>
+              <span class="chip chip--violet">Common UI</span>
+              <span class="chip chip--cyan">UMG</span>
+              <span class="chip chip--cyan">Niagara</span>
+              <span class="chip chip--cyan">Enhanced Input</span>
+              <span class="chip chip--cyan">Behavior Trees</span>
+              <span class="chip chip--cyan">AI</span>
+              <span class="chip chip--cyan">DataTables</span>
+              <span class="chip chip--cyan">SaveGame</span>
+            </div>
+          </article>
+
+          <article class="glass skill-card reveal reveal-delay-2">
+            <div class="skill-card__head">
+              <span class="skill-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 5v14c0 1.66-4 3-9 3s-9-1.34-9-3V5" />
+                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+                </svg>
+              </span>
+              <h3>Databases<small>Backend &amp; Data</small></h3>
+            </div>
+            <div class="tags">
+              <span class="chip chip--cyan">MySQL</span>
+              <span class="chip chip--cyan">MongoDB</span>
+              <span class="chip chip--blue">SQL</span>
+            </div>
+          </article>
+
+          <article class="glass skill-card reveal">
+            <div class="skill-card__head">
+              <span class="skill-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z" stroke-linejoin="round" />
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke-linejoin="round" />
+                  <path d="M2 2l7.586 7.586" />
+                  <circle cx="11" cy="11" r="2" />
+                </svg>
+              </span>
+              <h3>Design<small>UI &amp; UX</small></h3>
+            </div>
+            <div class="tags">
+              <span class="chip chip--violet">Figma</span>
+            </div>
+          </article>
+
+          <article class="glass skill-card reveal reveal-delay-1">
+            <div class="skill-card__head">
+              <span class="skill-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="m4 17 6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 19h8" stroke-linecap="round" />
+                </svg>
+              </span>
+              <h3>Tools &amp; Technologies<small>Workflow</small></h3>
+            </div>
+            <div class="tags">
+              <span class="chip chip--blue">Git</span>
+              <span class="chip chip--blue">GitHub</span>
+              <span class="chip chip--cyan">JSON</span>
+              <span class="chip chip--cyan">HTTP</span>
+              <span class="chip chip--violet">PyInstaller</span>
+              <span class="chip chip--violet">NSIS</span>
+              <span class="chip chip--violet">Unreal Insights</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Featured Projects ================= -->
+    <section id="featured" class="section" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">03 · Featured</span>
+          <h2 class="section__title" id="featured-title">Featured <em>Projects</em></h2>
+          <p class="section__lead">Gameplay frameworks, Unreal plugins and developer tooling — the most technically valuable work first.</p>
+        </div>
+
+        <div class="featured-grid">
+          <!-- Skill Tree -->
+          <article class="glass proj-card reveal">
+            <div class="proj-card__media">
+              <span class="proj-tile__badge">Procedural · UMG</span>
+              <img src="Thubnails/op9.png" alt="Procedural Skill Tree framework — Unreal Engine 5.6 UMG interface" loading="lazy" />
+            </div>
+            <div class="proj-card__body">
+              <h3>Procedural Skill Tree Framework</h3>
+              <p class="proj-card__summary">Data-driven, procedurally generated skill tree for RPGs — DataTable nodes, save/load persistence, Niagara unlock FX and zoom/pan viewport.</p>
+              <div class="proj-card__tags">
+                <span class="chip chip--blue">UE5</span><span class="chip chip--blue">C++</span>
+                <span class="chip chip--violet">Blueprint</span><span class="chip chip--violet">GAS</span>
+                <span class="chip chip--cyan">UMG</span><span class="chip chip--cyan">Niagara</span>
+              </div>
+              <div class="proj-card__actions">
+                <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-skilltree">View Details</button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Polished-Skill-tree-UMG" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Polished-Skill-tree-UMG/releases/tag/v1.1.2" target="_blank" rel="noopener">
+                  Download
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /><path d="M12 15V3" /></svg>
+                </a>
+                <a class="btn btn--ghost btn--sm" href="https://youtu.be/Y-6wPstxG5A" target="_blank" rel="noopener">Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- RM_MenuUI -->
+          <article class="glass proj-card reveal reveal-delay-1">
+            <div class="proj-card__media">
+              <span class="proj-tile__badge">Unreal Plugin · Common UI</span>
+              <div class="proj-tile"><span class="proj-tile__mark">RM</span></div>
+            </div>
+            <div class="proj-card__body">
+              <h3>RM_MenuUI Plugin</h3>
+              <p class="proj-card__summary">Reusable Unreal Engine plugin built on Common UI — modular menus, graphics/audio/input settings, save-load and cinematic credits.</p>
+              <div class="proj-card__tags">
+                <span class="chip chip--blue">UE5</span><span class="chip chip--blue">C++</span>
+                <span class="chip chip--violet">Common UI</span><span class="chip chip--violet">Enhanced Input</span>
+                <span class="chip chip--cyan">UMG</span>
+              </div>
+              <div class="proj-card__actions">
+                <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-menuui">View Details</button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/RM_MenuUi" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cinematic Boss Fight -->
+          <article class="glass proj-card reveal reveal-delay-2">
+            <div class="proj-card__media">
+              <span class="proj-tile__badge">UE5 Showcase</span>
+              <div class="proj-tile"><span class="proj-tile__mark">BOSS</span></div>
+            </div>
+            <div class="proj-card__body">
+              <h3>Cinematic Boss Fight</h3>
+              <p class="proj-card__summary">High-impact boss arena in Unreal Engine 5 — modular combat with cinematic FX, Nanite-optimized Megascans and dynamic lighting.</p>
+              <div class="proj-card__tags">
+                <span class="chip chip--blue">UE5</span><span class="chip chip--violet">Blueprint</span>
+                <span class="chip chip--cyan">AI Combat</span><span class="chip chip--cyan">Nanite</span>
+                <span class="chip chip--cyan">Megascans</span>
+              </div>
+              <div class="proj-card__actions">
+                <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-boss">View Details</button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Cinematic-Boss-Fight" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Cinematic-Boss-Fight/releases/tag/v1.0" target="_blank" rel="noopener">
+                  Download
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /><path d="M12 15V3" /></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- C++ FPS -->
+          <article class="glass proj-card reveal">
+            <div class="proj-card__media">
+              <span class="proj-tile__badge">C++ Project</span>
+              <div class="proj-tile"><span class="proj-tile__mark">FPS</span></div>
+            </div>
+            <div class="proj-card__body">
+              <h3>C++ FPS Game</h3>
+              <p class="proj-card__summary">Data-driven first-person shooter in native C++ — spawns interactive boxes from online JSON with dynamic materials, damage, scoring, HUD and polish.</p>
+              <div class="proj-card__tags">
+                <span class="chip chip--blue">UE</span><span class="chip chip--blue">C++</span>
+                <span class="chip chip--cyan">JSON</span><span class="chip chip--cyan">HTTP</span>
+                <span class="chip chip--violet">UMG</span>
+              </div>
+              <div class="proj-card__actions">
+                <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-fps">View Details</button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Firstpersonshooting" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Firstpersonshooting/releases/tag/1.0" target="_blank" rel="noopener">
+                  Download
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /><path d="M12 15V3" /></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Universal DB Manager -->
+          <article class="glass proj-card reveal reveal-delay-1">
+            <div class="proj-card__media">
+              <span class="proj-tile__badge">Python Desktop</span>
+              <div class="proj-tile"><span class="proj-tile__mark">DB</span></div>
+            </div>
+            <div class="proj-card__body">
+              <h3>Universal Cloud Database Manager</h3>
+              <p class="proj-card__summary">Cinematic Python GUI suite for secure cloud databases — admin login portal plus full MySQL and MongoDB management with CRUD and raw SQL.</p>
+              <div class="proj-card__tags">
+                <span class="chip chip--blue">Python</span><span class="chip chip--cyan">MySQL</span>
+                <span class="chip chip--cyan">MongoDB</span><span class="chip chip--violet">CRUD</span>
+                <span class="chip chip--violet">PyInstaller</span>
+              </div>
+              <div class="proj-card__actions">
+                <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-db">View Details</button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Universal-Cloud-DB-Manager-" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Projects ================= -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">04 · Projects</span>
+          <h2 class="section__title" id="projects-title">Project <em>Archive</em></h2>
+          <p class="section__lead">Academic and personal engineering work — from database systems and compilers to shipped gameplay frameworks.</p>
+        </div>
+
+        <div class="tabs reveal" role="tablist" aria-label="Project categories">
+          <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-target="panel-academic">Academic Projects</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-target="panel-personal">Personal Projects</button>
+        </div>
+
+        <!-- Academic -->
+        <div class="tab-panel mini-grid" id="panel-academic" role="tabpanel" aria-label="Academic projects">
+          <article class="glass mini-card reveal">
+            <h3>Student Database System</h3>
+            <p>Built using SQL and Python. Features include CRUD operations, ER diagram design, and reporting tools.</p>
+            <div class="mini-card__cats">
+              <span class="chip chip--cyan">SQL</span>
+              <span class="chip chip--blue">Python</span>
+              <span class="chip chip--violet">CRUD</span>
+            </div>
+          </article>
+
+          <article class="glass mini-card reveal reveal-delay-1">
+            <h3>Compiler Design (C++)</h3>
+            <p>Implemented lexical analyzer and parser for a mini language.</p>
+            <div class="mini-card__cats">
+              <span class="chip chip--blue">C++</span>
+              <span class="chip chip--violet">Lexer</span>
+              <span class="chip chip--violet">Parser</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Personal -->
+        <div class="tab-panel mini-grid" id="panel-personal" role="tabpanel" aria-label="Personal projects" hidden>
+          <article class="glass mini-card reveal">
+            <h3>Procedural Skill Tree Framework</h3>
+            <p>Data-driven, procedurally generated skill tree framework for Unreal Engine 5.6 with save systems and cinematic UI.</p>
+            <div class="mini-card__cats"><span class="chip chip--blue">UE5</span><span class="chip chip--blue">C++</span><span class="chip chip--cyan">UMG</span></div>
+            <div class="proj-card__actions">
+              <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-skilltree">View Details</button>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Polished-Skill-tree-UMG" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="glass mini-card reveal reveal-delay-1">
+            <h3>RM_MenuUI Plugin</h3>
+            <p>Reusable Unreal Engine plugin for Common UI-based menu systems, settings screens, credits and input mapping.</p>
+            <div class="mini-card__cats"><span class="chip chip--blue">C++</span><span class="chip chip--violet">Common UI</span><span class="chip chip--violet">Enhanced Input</span></div>
+            <div class="proj-card__actions">
+              <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-menuui">View Details</button>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/RM_MenuUi" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="glass mini-card reveal">
+            <h3>Cinematic Boss Fight</h3>
+            <p>UE5 showcase featuring modular combat, cinematic FX and Nanite-optimized environments.</p>
+            <div class="mini-card__cats"><span class="chip chip--blue">UE5</span><span class="chip chip--cyan">Nanite</span><span class="chip chip--cyan">AI</span></div>
+            <div class="proj-card__actions">
+              <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-boss">View Details</button>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Cinematic-Boss-Fight" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="glass mini-card reveal reveal-delay-1">
+            <h3>C++ FPS Game</h3>
+            <p>Data-driven FPS gameplay in native C++ using online JSON, dynamic spawning and dynamic materials.</p>
+            <div class="mini-card__cats"><span class="chip chip--blue">C++</span><span class="chip chip--cyan">JSON</span><span class="chip chip--cyan">HTTP</span></div>
+            <div class="proj-card__actions">
+              <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-fps">View Details</button>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Firstpersonshooting" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="glass mini-card reveal">
+            <h3>Universal Cloud Database Manager</h3>
+            <p>Cinematic Python GUI suite for secure cloud database access — MySQL and MongoDB with full CRUD.</p>
+            <div class="mini-card__cats"><span class="chip chip--blue">Python</span><span class="chip chip--cyan">MySQL</span><span class="chip chip--cyan">MongoDB</span></div>
+            <div class="proj-card__actions">
+              <button class="btn btn--primary btn--sm" type="button" data-open-modal="modal-db">View Details</button>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Universal-Cloud-DB-Manager-" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Unreal Showcase ================= -->
+    <section id="unreal" class="section" aria-labelledby="unreal-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">05 · Cinematic Gallery</span>
+          <h2 class="section__title" id="unreal-title">Unreal Engine <em>Showcase</em></h2>
+          <p class="section__lead">Environments, FX and gameplay moments built in Unreal Engine 5 — cinematic presentation with a developer focus.</p>
+        </div>
+
+        <div class="showcase-grid">
+          <article class="glass showcase-card reveal">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Cinematic</span>
+              <a href="https://www.youtube.com/watch?v=tbZJjbBsySI" target="_blank" rel="noopener" aria-label="Watch Boss Arena FX on YouTube">
+                <img src="Thubnails/op5.jpg" alt="Boss Arena FX — cinematic environment showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Boss Arena FX</h3>
+              <p>Cinematic boss arena environment with atmosphere and FX.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=tbZJjbBsySI" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-1">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Gameplay</span>
+              <a href="https://www.youtube.com/watch?v=BXLEB6zYZXY" target="_blank" rel="noopener" aria-label="Watch Fighting with team on YouTube">
+                <img src="Thubnails/op6.jpg" alt="Fighting with team — Unreal Engine 5 combat showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Fighting with Team</h3>
+              <p>Team combat and action gameplay choreography.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=BXLEB6zYZXY" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-2">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">UMG / UI</span>
+              <a href="https://youtu.be/Y-6wPstxG5A" target="_blank" rel="noopener" aria-label="Watch Skill Tree UMG on YouTube">
+                <img src="Thubnails/op9.png" alt="Skill Tree UMG — procedural skill tree interface" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Skill Tree UMG</h3>
+              <p>Procedural skill tree interface built with UMG.</p>
+              <a class="link-btn" href="https://youtu.be/Y-6wPstxG5A" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=I009vMfjcWg" target="_blank" rel="noopener" aria-label="Watch Cinematic Ocean on YouTube">
+                <img src="Thubnails/op2.jpg" alt="Cinematic Ocean — environment showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Cinematic Ocean</h3>
+              <p>Atmospheric ocean and lighting cinematic.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=I009vMfjcWg" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-1">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=WBfkvfBscjM" target="_blank" rel="noopener" aria-label="Watch Shallow water scene on YouTube">
+                <img src="Thubnails/op3.jpg" alt="Shallow water scene — water and lighting study" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Shallow Water Scene</h3>
+              <p>Shallow water surface and lighting study.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=WBfkvfBscjM" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=sxiilgW-IMA" target="_blank" rel="noopener" aria-label="Watch Japanese Temple on YouTube">
+                <img src="Thubnails/op7.png" alt="Japanese Temple — environment showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Japanese Temple</h3>
+              <p>Japanese temple environment walkthrough.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=sxiilgW-IMA" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-1">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=xTXRgxee0yw" target="_blank" rel="noopener" aria-label="Watch Ruins and Temple on YouTube">
+                <img src="Thubnails/op1.jpg" alt="Ruins and Temple — environment showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Ruins and Temple</h3>
+              <p>Ruins and temple environment flythrough.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=xTXRgxee0yw" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-2">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=hhU92KqdRC4" target="_blank" rel="noopener" aria-label="Watch Legacy Beach Scene on YouTube">
+                <img src="Thubnails/op4.jpg" alt="Legacy Beach Scene — environment showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Legacy Beach Scene</h3>
+              <p>Legacy beach scene environment and lighting.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=hhU92KqdRC4" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Cinematic</span>
+              <a href="https://www.youtube.com/watch?v=7D-GkqhNaJU" target="_blank" rel="noopener" aria-label="Watch Cinematics Cliff on YouTube">
+                <img src="Thubnails/op8.jpg" alt="Cinematics Cliff — cliff-side cinematic showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Cinematics Cliff</h3>
+              <p>Cliff-side cinematic sequence and camera work.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=7D-GkqhNaJU" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- AI & behavior -->
+        <div class="ai-grid">
+          <article class="glass ai-card reveal">
+            <span class="ai-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="4" y="8" width="16" height="12" rx="2" />
+                <path d="M12 8V4" stroke-linecap="round" /><path d="M8 4h8" stroke-linecap="round" />
+                <path d="M9 14h6" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div>
+              <h3>AI Boss Enemy</h3>
+              <p>Designed using Blueprint. Features interactive mechanics, level design, and custom UI.</p>
+            </div>
+          </article>
+
+          <article class="glass ai-card reveal reveal-delay-1">
+            <span class="ai-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 3l8 4v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V7l8-4z" stroke-linejoin="round" />
+                <path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div>
+              <h3>AI Enemy Behavior</h3>
+              <p>Implemented using Unreal's behavior trees and Blueprint scripting.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="glass showcase-open reveal">
+          <div>
+            <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Full cinematic showcase</h3>
+            <p style="color:var(--muted);font-size:0.95rem;">Open the dedicated showcase page to watch every environment and gameplay video on YouTube.</p>
+          </div>
+          <a class="btn btn--primary" href="index.html">
+            Open Unreal Showcase
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Contact ================= -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">06 · Contact</span>
+          <h2 class="section__title" id="contact-title">Get In <em>Touch</em></h2>
+          <p class="section__lead">Open to gameplay programming, Unreal Engine and software development opportunities.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="glass contact-card reveal">
+            <span class="contact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 6L2 7" />
+              </svg>
+            </span>
+            <h3>Email</h3>
+            <p>rr188351@gmail.com</p>
+            <a class="btn btn--primary btn--sm" href="mailto:rr188351@gmail.com">Email Me</a>
+          </article>
+
+          <article class="glass contact-card reveal reveal-delay-1">
+            <span class="contact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+            </span>
+            <h3>GitHub</h3>
+            <p>github.com/rr188351</p>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351" target="_blank" rel="noopener">Open GitHub</a>
+          </article>
+
+          <article class="glass contact-card reveal reveal-delay-2">
+            <span class="contact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+              </svg>
+            </span>
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/ramesh-46a175210</p>
+            <a class="btn btn--ghost btn--sm" href="https://www.linkedin.com/in/ramesh-46a175210/" target="_blank" rel="noopener">Open LinkedIn</a>
+          </article>
+        </div>
+
+        <div class="glass contact-note reveal" role="note">
+          <span style="color:var(--accent-2);font-size:1.2rem;" aria-hidden="true">★</span>
+          <span>
+            This portfolio is built and deployed on <strong style="color:var(--text);">GitHub Pages</strong>.
+            All projects, links and repositories are live.
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Ramesh</p>
+        <p class="footer__role">Gameplay / Software Developer</p>
+      </div>
+
+      <div class="footer__tech">
+        <span class="chip chip--blue">C++</span>
+        <span class="chip chip--blue">Python</span>
+        <span class="chip chip--violet">Unreal Engine</span>
+        <span class="chip chip--violet">Blueprint</span>
+        <span class="chip chip--cyan">MySQL</span>
+        <span class="chip chip--cyan">MongoDB</span>
+        <span class="chip chip--violet">Figma</span>
+      </div>
+
+      <div class="footer__links">
+        <a href="https://github.com/rr188351" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/ramesh-46a175210/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:rr188351@gmail.com">Email</a>
+        <a href="https://github.com/rr188351/RMACE-Cinematic-Portfolio" target="_blank" rel="noopener">Portfolio Repo</a>
+      </div>
+
+      <p class="footer__copy">© <span class="js-year">2025</span> Ramesh. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= Project detail: Skill Tree ================= -->
+  <div class="modal" id="modal-skilltree" hidden role="dialog" aria-modal="true" aria-labelledby="modal-skilltree-title">
+    <div class="modal__backdrop"></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" aria-label="Close project details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round" /></svg>
+      </button>
+      <div class="modal__head">
+        <div class="tag-row">
+          <span class="chip chip--blue">UE5.6</span><span class="chip chip--blue">C++</span>
+          <span class="chip chip--violet">Blueprint</span><span class="chip chip--violet">GAS</span>
+          <span class="chip chip--cyan">UMG</span><span class="chip chip--cyan">Niagara</span>
+          <span class="chip chip--cyan">DataTables</span><span class="chip chip--cyan">SaveGame</span>
+        </div>
+        <h3 id="modal-skilltree-title">Procedural Skill Tree Framework</h3>
+      </div>
+      <div class="modal__body">
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Overview</h4>
+          <p>A modular, cinematic skill tree framework built in Unreal Engine 5.6. Designed for RPGs and action games,
+            this system supports procedural node generation, save/load persistence, and cinematic UI polish.
+            The skill tree is data-driven and procedurally generated — no manual node placement required. Simply add
+            entries in a DataTable and the system auto-creates nodes with connections, icons, and behaviors.</p>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Core Features</h4>
+          <ul class="detail-list">
+            <li><strong>Procedural Node Generation</strong> — nodes auto-spawn from DataTable entries (ID, Name, Icon, Prerequisites, Flags).</li>
+            <li><strong>Save Game State</strong> — learned/unlearned nodes persist across sessions via a USaveGame subclass.</li>
+            <li><strong>Learnable / Unlearnable Flags</strong> — dynamic conditions toggle skill availability.</li>
+            <li><strong>Hover FX + Animations</strong> — glow, spin, circle-to-hex transform and sound cues.</li>
+            <li><strong>Skill Unlock FX</strong> — Niagara particle bursts themed per skill.</li>
+            <li><strong>Zoom / Pan Controls</strong> — smooth viewport navigation with auto-center (0.7s snap).</li>
+            <li><strong>Single Component Control</strong> — all behaviors centralized in SkillTreeManager.</li>
+            <li><strong>GAS Integration</strong> — designed to connect with gameplay abilities.</li>
+            <li><strong>Performance Optimization</strong> — Soft References and asynchronous asset loading keep the UI responsive.</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Architecture</h4>
+          <div class="arch-tree" role="img" aria-label="Skill tree architecture diagram">SkillTreeManager (central component)
  ├── NodeWidget (UMG)
  ├── DataTable (FSkillData struct)
  ├── SaveSystem (USaveGame subclass)
  ├── FX (Niagara emitters, SoundCues)
- └── InputHandler (zoom, pan, auto‑center)
+ └── InputHandler (zoom, pan, auto-center)</div>
+        </section>
 
-🔄 Procedural Generation
-Add new skill in DataTable → auto node spawn.
-Connections auto‑map based on prerequisites.
-Hexagonal layout ensures cinematic symmetry.
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Procedural Generation</h4>
+          <p>Add a new skill in the DataTable → auto node spawn. Connections auto-map based on prerequisites,
+            and the hexagonal layout ensures cinematic symmetry.</p>
+        </section>
 
-💾 Save System
-USaveGame subclass stores unlocked node IDs.
-Auto‑load on game start.
-Supports learn/unlearn toggles.
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Save System</h4>
+          <p>A <span class="code-inline">USaveGame</span> subclass stores unlocked node IDs. Auto-loads on game start
+            and supports learn/unlearn toggles.</p>
+        </section>
 
-🎨 UI & FX
-Hover: Glow aura + spin animation + sound cue.
-Select: Impact sound + particle burst.
-Unlock: Themed FX (gold sparks, fire embers, ghostly mist).
-Opening Animation: Each skill has unique intro FX.
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>UI &amp; FX</h4>
+          <ul class="detail-list">
+            <li><strong>Hover:</strong> glow aura + spin animation + sound cue.</li>
+            <li><strong>Select:</strong> impact sound + particle burst.</li>
+            <li><strong>Unlock:</strong> themed FX — gold sparks, fire embers, ghostly mist.</li>
+            <li><strong>Opening Animation:</strong> each skill has a unique intro FX.</li>
+          </ul>
+        </section>
 
-🎮 Controls
-Pan: Drag viewport.
-Zoom: Scroll in/out.
-Auto‑Center: Smooth snap (0.7s) to clicked node.
-Curve Assets: Used for easing animations.
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Controls</h4>
+          <div class="detail-grid">
+            <div class="cell"><strong>Pan</strong><p>Drag viewport</p></div>
+            <div class="cell"><strong>Zoom</strong><p>Scroll in / out</p></div>
+            <div class="cell"><strong>Auto-Center</strong><p>Smooth snap (0.7s) to clicked node</p></div>
+            <div class="cell"><strong>Easing</strong><p>Curve assets used for animations</p></div>
+          </div>
+        </section>
 
-⚙️ Customization
-Add new skills via DataTable only.
-Replace icons, sounds, FX per skill theme.
-Adjust zoom/pan speed in SkillTreeManager.
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Performance</h4>
+          <p>Soft References and asynchronous asset loading reduce initial load cost. Build size was reduced from
+            <strong>10.3 MiB → 4.5 MiB</strong> through optimized loading of skill icons and FX.</p>
+        </section>
 
-🔮 Future Plans
-Plugin packaging for Unreal Marketplace.
-Website showcase with demo GIFs.
-Expanded node types (passive/active/ultimate).
-Multiplayer sync for co‑op RPGs.
-Downlaod-<a href="https://github.com/rr188351/Polished-Skill-tree-UMG/releases/tag/v1.1.2">https://github.com/rr188351/Polished-Skill-tree-UMG/releases/tag/v1.1.2</a>
-      </pre>
-    </details>
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Customization &amp; Future Plans</h4>
+          <p>Add new skills via DataTable only; replace icons, sounds and FX per skill theme; adjust zoom/pan speed in
+            SkillTreeManager. Future plans include plugin packaging for the Unreal Marketplace, expanded node types
+            (passive / active / ultimate) and multiplayer sync for co-op RPGs.</p>
+        </section>
+
+        <div class="modal__links">
+          <a class="btn btn--primary btn--sm" href="https://github.com/rr188351/Polished-Skill-tree-UMG" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Polished-Skill-tree-UMG/releases/tag/v1.1.2" target="_blank" rel="noopener">Download Release</a>
+          <a class="btn btn--ghost btn--sm" href="https://youtu.be/Y-6wPstxG5A" target="_blank" rel="noopener">Demo Video</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="project">
-    <h3>Cinematic Boss Fight</h3>
-    <details>
-      <summary>🎮 View Details</summary>
-      <pre>
-🎮 Cinematic Boss Fight
-Unreal Engine 5 showcase featuring modular combat, cinematic FX, and Nanite-optimized environments.ptimized environments.
-How to play number key 7 to switch magic spell mode left click to fire ,number key 9 for sworld mode attacks are 
-in combo left click,left alt for dash ability and also movement wsad/up down left right key. 
-Downlaod-<a href="https://github.com/rr188351/Cinematic-Boss-Fight/releases/tag/v1.0">https://github.com/rr188351/Cinematic-Boss-Fight/releases/tag/v1.0</a>
-</pre>
-    </details>
+
+  <!-- ================= Project detail: RM_MenuUI ================= -->
+  <div class="modal" id="modal-menuui" hidden role="dialog" aria-modal="true" aria-labelledby="modal-menuui-title">
+    <div class="modal__backdrop"></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" aria-label="Close project details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round" /></svg>
+      </button>
+      <div class="modal__head">
+        <div class="tag-row">
+          <span class="chip chip--blue">UE5</span><span class="chip chip--blue">C++</span>
+          <span class="chip chip--violet">Common UI</span><span class="chip chip--violet">Enhanced Input</span>
+          <span class="chip chip--cyan">UMG</span><span class="chip chip--cyan">Plugin</span>
+        </div>
+        <h3 id="modal-menuui-title">RM_MenuUI Plugin</h3>
+      </div>
+      <div class="modal__body">
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Overview</h4>
+          <p>A reusable Unreal Engine plugin built on Common UI for scalable menu systems — drop it into any project's
+            Plugins folder and enable it to get a complete, modular game menu framework.</p>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Features</h4>
+          <ul class="detail-list">
+            <li><strong>Menu System</strong> — modular, reusable menus powered by Common UI.</li>
+            <li><strong>Graphics Settings</strong> — resolution, quality presets, and display options.</li>
+            <li><strong>Audio Settings</strong> — volume sliders, mute toggles, and sound profiles.</li>
+            <li><strong>Display Controls</strong> — fullscreen/windowed modes, brightness, and scaling.</li>
+            <li><strong>Input Controls</strong> — Enhanced Input mapping with profiles for keyboard, controller, and touch.</li>
+            <li><strong>Save / Load System</strong> — game settings persist across sessions.</li>
+            <li><strong>Credits Screen</strong> — cinematic scrolling credits with audio integration.</li>
+            <li><strong>Continue / Resume Flow</strong> — seamless game resume from the last save.</li>
+            <li><strong>Asynchronous Operations</strong> — smooth UI updates without blocking gameplay.</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Prerequisites</h4>
+          <p>Enable Common UI in Project Settings, and enable Enhanced Input both as a plugin and in Project Settings.
+            Note: localization works properly only in Standalone mode, not in PIE (Play In Editor).</p>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Installation</h4>
+          <p>Copy the <span class="code-inline">RM_MenuUI</span> folder into your project's
+            <span class="code-inline">Plugins/</span> directory, restart Unreal Engine, then enable the plugin via
+            Edit → Plugins.</p>
+        </section>
+
+        <div class="modal__links">
+          <a class="btn btn--primary btn--sm" href="https://github.com/rr188351/RM_MenuUi" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
   </div>
-    <div class="project">
-    <h3>First-Person Shooting Game</h3>
-    <details>
-      <summary>🎮 View Details</summary>
-      <pre>
-🎮 C++ FPS Shooting Game (Unreal Engine)
 
-## 📌 Objective
-Develop a **First-Person Shooter (FPS)** game in **Unreal Engine (latest version)** using **native C++ APIs only**.  
-The game dynamically spawns interactive boxes based on online JSON data. The player can shoot and damage these boxes, earning points upon destruction.
+  <!-- ================= Project detail: Cinematic Boss Fight ================= -->
+  <div class="modal" id="modal-boss" hidden role="dialog" aria-modal="true" aria-labelledby="modal-boss-title">
+    <div class="modal__backdrop"></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" aria-label="Close project details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round" /></svg>
+      </button>
+      <div class="modal__head">
+        <div class="tag-row">
+          <span class="chip chip--blue">UE5</span><span class="chip chip--violet">Blueprint</span>
+          <span class="chip chip--cyan">AI Combat</span><span class="chip chip--cyan">Nanite</span>
+          <span class="chip chip--cyan">Megascans</span>
+        </div>
+        <h3 id="modal-boss-title">Cinematic Boss Fight</h3>
+      </div>
+      <div class="modal__body">
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Overview</h4>
+          <p>Unreal Engine 5 showcase featuring modular combat, cinematic FX, and Nanite-optimized environments.
+            A high-impact boss arena built with modular combat logic, cinematic FX triggers and dramatic presentation.</p>
+        </section>
 
----
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Features</h4>
+          <ul class="detail-list">
+            <li><strong>Modular Combat System</strong> — melee (sword) and magic spell modes with combo attacks.</li>
+            <li><strong>Cinematic FX Triggers</strong> — combat actions drive dramatic visual feedback.</li>
+            <li><strong>Dynamic Lighting</strong> — lighting, fog volumes and post-process drama.</li>
+            <li><strong>Nanite-optimized Megascans Environment</strong> — high-quality geometry at stable performance.</li>
+            <li><strong>Material Parameter Collections</strong> — centralized FX control.</li>
+            <li><strong>Packaged for Windows (.zip)</strong> — downloadable playable build.</li>
+          </ul>
+        </section>
 
-## 🌐 Online JSON Data
-Boxes are spawned from JSON hosted at:  
-[GitHub JSON Link](https://raw.githubusercontent.com/CyrusCHAU/Varadise-Technical-Test/refs/heads/main/data.json)
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>How to Play / Controls</h4>
+          <div class="controls-row">
+            <div class="cell"><strong>Magic Spell Mode</strong><p><kbd>7</kbd> switch mode — <span class="code-inline">Left Click</span> to fire</p></div>
+            <div class="cell"><strong>Sword Mode</strong><p><kbd>9</kbd> switch mode — attacks in combo with <span class="code-inline">Left Click</span></p></div>
+            <div class="cell"><strong>Dash</strong><p><kbd>Left Alt</kbd></p></div>
+            <div class="cell"><strong>Movement</strong><p><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> / arrow keys</p></div>
+          </div>
+        </section>
 
-Each box entry includes:
-- **Type** → For future expansions  
-- **Color** → Applied dynamically to material  
-- **Health** → Initial health value  
-- **Score** → Points awarded upon destruction  
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Technical Highlights</h4>
+          <div class="detail-grid">
+            <div class="cell"><strong>Rendering</strong><p>Nanite geometry, dynamic lighting, fog volumes</p></div>
+            <div class="cell"><strong>FX</strong><p>Post-processing drama, Material Parameter Collections</p></div>
+            <div class="cell"><strong>Environment</strong><p>Megascans-based boss arena</p></div>
+            <div class="cell"><strong>Delivery</strong><p>Windows packaged build (ZIP)</p></div>
+          </div>
+        </section>
 
-Error handling covers:
-- HTTP request failure  
-- JSON parse errors  
-- Invalid/missing fields  
+        <div class="modal__links">
+          <a class="btn btn--primary btn--sm" href="https://github.com/rr188351/Cinematic-Boss-Fight" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Cinematic-Boss-Fight/releases/tag/v1.0" target="_blank" rel="noopener">Download Build</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
----
+  <!-- ================= Project detail: C++ FPS ================= -->
+  <div class="modal" id="modal-fps" hidden role="dialog" aria-modal="true" aria-labelledby="modal-fps-title">
+    <div class="modal__backdrop"></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" aria-label="Close project details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round" /></svg>
+      </button>
+      <div class="modal__head">
+        <div class="tag-row">
+          <span class="chip chip--blue">UE</span><span class="chip chip--blue">C++</span>
+          <span class="chip chip--cyan">JSON</span><span class="chip chip--cyan">HTTP</span>
+          <span class="chip chip--violet">UMG</span><span class="chip chip--cyan">Particles</span>
+        </div>
+        <h3 id="modal-fps-title">C++ FPS Shooting Game</h3>
+      </div>
+      <div class="modal__body">
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Objective</h4>
+          <p>Develop a First-Person Shooter (FPS) game in Unreal Engine using native C++ APIs only. The game dynamically
+            spawns interactive boxes based on online JSON data; the player shoots and damages these boxes, earning
+            points upon destruction.</p>
+        </section>
 
-## 🟦 Box Spawning
-- Boxes spawned via `SpawnActor` with collision handling.  
-- Attributes applied using `ApplyBoxStats()` in C++.  
-- Spawner injects **DestroySound** and **DestroyEffect** centrally.  
-- Simple cube mesh used (UE default).  
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Online JSON Data</h4>
+          <p>Boxes are spawned from JSON hosted online at
+            <a href="https://raw.githubusercontent.com/CyrusCHAU/Varadise-Technical-Test/refs/heads/main/data.json" target="_blank" rel="noopener">this data source</a>.
+            Each box entry includes:</p>
+          <ul class="detail-list">
+            <li><strong>Type</strong> — for future expansions.</li>
+            <li><strong>Color</strong> — applied dynamically to the material.</li>
+            <li><strong>Health</strong> — initial health value.</li>
+            <li><strong>Score</strong> — points awarded upon destruction.</li>
+          </ul>
+          <p style="margin-top:10px;">Error handling covers HTTP request failure, JSON parse errors, and invalid/missing fields.</p>
+        </section>
 
----
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Box Spawning</h4>
+          <p>Boxes spawn via <span class="code-inline">SpawnActor</span> with collision handling. Attributes are applied
+            using <span class="code-inline">ApplyBoxStats()</span> in C++. The spawner injects
+            <span class="code-inline">DestroySound</span> and <span class="code-inline">DestroyEffect</span> centrally.
+            A simple cube mesh is used (UE default).</p>
+        </section>
 
-## 🎨 Custom Material
-- Material Instance Dynamic (MID) created with a `Base Color` parameter.  
-- Color parsed from JSON and applied in C++:  
-  ```cpp
-  DynMat->SetVectorParameterValue("Base Color", BoxColor);
-🔫 Shooting Mechanics
-Implemented using line trace/projectile system.
-On hit:
-Box health reduced by 1
-If health ≤ 0 → Box destroyed
-Sound + particle effect triggered
-Score incremented via ShooterGameMode
-🖥️ Scoreboard UI
-Built with UUserWidget (C++ base + UMG extension).
-Displays player’s current score.
-Updates dynamically when a box is destroyed.
-📂 Project Structure
-Source/
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Custom Material</h4>
+          <p>A Material Instance Dynamic (MID) is created with a Base Color parameter. The color is parsed from JSON and
+            applied in C++:
+            <span class="code-inline">DynMat-&gt;SetVectorParameterValue("Base Color", BoxColor)</span></p>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Shooting Mechanics</h4>
+          <p>Implemented using a line trace / projectile system. On hit, box health is reduced by 1; when health reaches
+            0 the box is destroyed with a sound and particle effect, and the score is incremented via
+            <span class="code-inline">ShooterGameMode</span>.</p>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Scoreboard UI</h4>
+          <p>Built with <span class="code-inline">UUserWidget</span> (C++ base + UMG extension). Displays the player's
+            current score and updates dynamically when a box is destroyed.</p>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Project Structure</h4>
+          <div class="arch-tree" role="img" aria-label="FPS project source structure">Source/
  └── Practce/
       ├── Public/
       │    ├── MyClass.h          // BoxActor class (health, score, color, effects)
@@ -269,63 +1053,85 @@ Source/
       │    ├── ShooterGameMode.cpp// Score increment logic
       │    └── ShooterHUD.cpp     // UI update logic
       │
-      └── Practce.Build.cs        // Build configuration
-✅ Requirements
-All gameplay logic in C++ only
-UMG used only for UI (C++ base class required)
-Default UE assets (cube mesh, projectile)
-Smooth performance
-Clean folder structure & documented code
-📌 Conclusion
-This project demonstrates:
+      └── Practce.Build.cs        // Build configuration</div>
+        </section>
 
-Data-driven gameplay using online JSON
-C++ mastery in Unreal Engine
-Cinematic polish with sound + particle effects
-Recruiter-friendly documentation with modular structure
-Downlaod-<a href="https://github.com/rr188351/Firstpersonshooting/releases/tag/1.0">Dowload Now</a>
-      </pre>
-    </details>
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Requirements &amp; Conclusion</h4>
+          <p>All gameplay logic was written in C++ only, with UMG used only for UI (C++ base class required), default UE
+            assets and smooth performance. The project demonstrates data-driven gameplay using online JSON, C++ mastery
+            in Unreal Engine, and cinematic polish with sound and particle effects.</p>
+        </section>
+
+        <div class="modal__links">
+          <a class="btn btn--primary btn--sm" href="https://github.com/rr188351/Firstpersonshooting" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost btn--sm" href="https://github.com/rr188351/Firstpersonshooting/releases/tag/1.0" target="_blank" rel="noopener">Download Build</a>
+        </div>
+      </div>
+    </div>
   </div>
-  
-</section>
 
-<section id="unreal">
-  <h2><a href="index.html">Unreal Engine Showcase</a></h2>
-  <button class="hj" onclick="openindex()"> For Projects Videos Click Me </button>
-  <div class="project">
-    <h3>AI Boss Enemy</h3>
-    <details>
-      <summary>📂 View Details</summary>
-      <p>Designed using Blueprint. Features interactive mechanics, level design, and custom UI.</p>
-    </details>
+  <!-- ================= Project detail: Universal Cloud DB Manager ================= -->
+  <div class="modal" id="modal-db" hidden role="dialog" aria-modal="true" aria-labelledby="modal-db-title">
+    <div class="modal__backdrop"></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" aria-label="Close project details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round" /></svg>
+      </button>
+      <div class="modal__head">
+        <div class="tag-row">
+          <span class="chip chip--blue">Python</span><span class="chip chip--cyan">MySQL</span>
+          <span class="chip chip--cyan">MongoDB</span><span class="chip chip--violet">CRUD</span>
+          <span class="chip chip--violet">PyInstaller</span><span class="chip chip--violet">NSIS</span>
+        </div>
+        <h3 id="modal-db-title">Universal Cloud Database Manager</h3>
+      </div>
+      <div class="modal__body">
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Overview</h4>
+          <p>Universal Cloud Database Manager by RMAC — a cinematic Python GUI suite for secure admin login, cloud
+            database access, and full-stack data operations, blending visual storytelling with backend precision.</p>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Modules</h4>
+          <div class="detail-grid">
+            <div class="cell">
+              <strong>🔐 Admin Login Portal</strong>
+              <p>Credential-based access · stylized portal interface with surreal background · entry point to SQL and MongoDB modules</p>
+            </div>
+            <div class="cell">
+              <strong>🧮 iSQL Cloud Manager</strong>
+              <p>MySQL/Cloud connection (host, port, user, password) · create/load databases &amp; tables · record editor with Insert, Update, Delete, Multi Delete · raw SQL queries · logout / database switch</p>
+            </div>
+            <div class="cell">
+              <strong>🍃 MongoDB Cloud Manager</strong>
+              <p>Connect via mongodb+srv:// or local URI · create datasets &amp; collections · full CRUD record editor · delete field, collection or entire database · logout / database switch</p>
+            </div>
+            <div class="cell">
+              <strong>📺 Demo</strong>
+              <p>Full cinematic walkthrough available on the project repository (Python Tkinter project).</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="detail-block">
+          <h4><span class="bar" aria-hidden="true"></span>Packaging &amp; Deployment</h4>
+          <ul class="detail-list">
+            <li>Built with PyInstaller (folder-based, for Defender compatibility).</li>
+            <li>NSIS installer with custom install path and uninstall support.</li>
+            <li>No CMD window, no permission errors, no runtime issues.</li>
+            <li>Run directly with <span class="code-inline">cd ./RMACEUNIVERSAL.exe</span></li>
+          </ul>
+        </section>
+
+        <div class="modal__links">
+          <a class="btn btn--primary btn--sm" href="https://github.com/rr188351/Universal-Cloud-DB-Manager-" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="project">
-    <h3>AI Enemy Behavior</h3>
-    <details>
-      <summary>📂 View Details</summary>
-      <p>Implemented using Unreal's behavior trees and Blueprint scripting.</p>
-    </details>
-  </div>
-  
-</section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: rr188351@gmail.com</p>
-  <p>GitHub: <a href="https://github.com/rr188351">github.com/rameshdev</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/ramesh-46a175210/">linkedin.com/in/rameshdev</a></p>
-</section>
-
-<footer>
-  <p>© 2025 Ramesh. All rights reserved.</p>
-</footer>
-
-
+  <script src="JS/main.js"></script>
 </body>
-<script>
-  function openindex() {
-    window.location.href = "index.html"; 
-  }
-</script>
 </html>

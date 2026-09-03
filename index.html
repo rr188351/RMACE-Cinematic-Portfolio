@@ -3,179 +3,244 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unreal Engine Videos | Ramesh</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(270deg, #ff00c8, #00ffe0, #fffb00, #ff6a00, #00ff6a);
-      background-size: 1000% 1000%;
-      animation: rainbowFlow 20s ease infinite;
-      color: #fff;
-    }
-    @keyframes rainbowFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      text-align: center;
-      border-bottom: 6px double #fff;
-      box-shadow: 0 0 20px #00ffe0;
-    }
-    header h1 {
-      font-size: 2.5em;
-      color: #fff;
-      text-shadow: 0 0 10px #ff00c8, 0 0 20px #00ffe0;
-    }
-    header p {
-      font-size: 1.2em;
-      color: #ccc;
-    }
-    nav {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(4px);
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      background: #fff;
-      color: #000;
-      transform: scale(1.1);
-      box-shadow: 0 0 15px #ff00c8, 0 0 30px #00ffe0;
-    }
-    #videos {
-      padding: 40px;
-    }
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .video-card {
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid #fff;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 0 20px #00ffe0;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease;
-      animation: pulseBorder 4s infinite;
-    }
-    .video-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 30px #ff00c8;
-    }
-    .video-card img {
-      width: 100%;
-      height: auto;
-      max-height: 225px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #fff;
-      display: block;
-    }
-    @keyframes pulseBorder {
-      0% { box-shadow: 0 0 10px #00ffe0; }
-      50% { box-shadow: 0 0 20px #ff00c8; }
-      100% { box-shadow: 0 0 10px #00ffe0; }
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #aaa;
-      border-top: 2px solid #fff;
-      box-shadow: 0 0 10px #00ffe0;
-    }
-  </style>
+  <title>Unreal Engine Showcase | Ramesh — Cinematic Gallery</title>
+  <meta name="description" content="Cinematic Unreal Engine 5 showcase by Ramesh — boss arenas, environments, water and lighting studies, skill-tree UI and AI gameplay. Watch on YouTube." />
+  <meta name="author" content="Ramesh" />
+  <meta name="theme-color" content="#05070d" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Unreal Engine Showcase | Ramesh" />
+  <meta property="og:description" content="Cinematic Unreal Engine 5 environments, FX and gameplay showcases." />
+  <meta property="og:image" content="Thubnails/op2.jpg" />
+
+  <link rel="stylesheet" href="CSS/main.css" />
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  <link rel="icon" type="image/png" href="ri.png" />
 </head>
 <body>
-  <header>
-    <h1>Unreal Engine Showcase</h1>
-    <p>Watch my cinematic and technical creations in action</p>
-    <nav>
-      <a href="ramw.html">Home</a>
-      <a href="#videos">Please Click on image to view Video</a>
-    </nav>
+
+  <!-- ================= Navigation ================= -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="ramw.html" aria-label="Back to Ramesh's portfolio home">
+        <span class="brand__mark">RM</span>
+        <span>Ramesh<small>Unreal Showcase</small></span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav class="nav__menu" id="nav-menu" aria-label="Primary navigation">
+        <a class="nav__link" href="ramw.html">Home</a>
+        <a class="nav__link" href="ramw.html#projects">Projects</a>
+        <a class="nav__link" href="figma.html">Figma</a>
+        <a class="nav__link" href="ramw.html#contact">Contact</a>
+        <a class="btn btn--primary btn--sm nav__cta" href="https://www.youtube.com/@rr188351" target="_blank" rel="noopener">
+          YouTube
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <path d="M15 3h6v6" /><path d="M10 14 21 3" />
+          </svg>
+        </a>
+      </nav>
+    </div>
   </header>
 
-  <section id="videos">
-    <div class="video-grid">
-      <div class="video-card">
-        <h3>Boss Arena FX</h3>
-        <a href="https://www.youtube.com/watch?v=tbZJjbBsySI" target="_blank">
-          <img src="Thubnails/op5.jpg" alt="Forest Path Showcase">
-        </a>
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="page-hero" aria-label="Unreal Engine Showcase introduction">
+      <div class="container">
+        <p class="page-hero__eyebrow"><span class="dot" aria-hidden="true" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);"></span> Unreal Engine 5 · Cinematic Gallery</p>
+        <h1>Unreal Engine <span style="background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Showcase</span></h1>
+        <p>Environments, FX, water and lighting studies, AI behavior and UI — nine cinematic pieces built in Unreal Engine 5. Click any card to watch the video on YouTube.</p>
       </div>
-      <div class="video-card">
-        <h3>Fighting with team</h3>
-        <a href="https://www.youtube.com/watch?v=BXLEB6zYZXY" target="_blank">
-          <img src="Thubnails/op6.jpg" alt="Cliff Flythrough FX">
-        </a>
-      </div>
-      <div class="video-card">
-          <h3>Skill Tree UMG</h3>
-          <a href="https://youtu.be/Y-6wPstxG5A" target="_blank">
-            <img src="Thubnails/op9.png" alt=" skill tree ">
-          </a>
-      </div>
-      <div class="video-card">
-        <h3>Cinematic Ocean</h3>
-        <a href="https://www.youtube.com/watch?v=I009vMfjcWg" target="_blank">
-          <img src="Thubnails/op2.jpg" alt="Beach Cinematic">
-        </a>
-      </div>
-      <div class="video-card">
-        <h3>Shallow water scence</h3>
-        <a href="https://www.youtube.com/watch?v=WBfkvfBscjM" target="_blank">
-          <img src="Thubnails/op3.jpg" alt="Boss Arena FX">
-        </a>
-      </div>
-      <div class="video-card">
-        <h3>Japanese Temple</h3>
-        <a href="https://www.youtube.com/watch?v=sxiilgW-IMA" target="_blank">
-          <img src="Thubnails/op7.png" alt="Combat Lighting Test">
-        </a>
-      </div>
-      <div class="video-card">
-        <h3>Ruins and Temple</h3>
-        <a href="https://www.youtube.com/watch?v=xTXRgxee0yw" target="_blank">
-          <img src="Thubnails/op1.jpg" alt="Stylized Flythrough">
-        </a>
-      </div>
-      <div class="video-card">
-        <h3>Legacy Beach Scene</h3>
-        <a href="https://www.youtube.com/watch?v=hhU92KqdRC4" target="_blank">
-          <img src="Thubnails/op4.jpg" alt="Legacy Beach Scene">
-        </a>
-      </div>
-        <div class="video-card">
-          <h3>Cinematics Clif</h3>
-          <a href="https://www.youtube.com/watch?v=7D-GkqhNaJU" target="_blank">
-            <img src="Thubnails/op8.jpg" alt="Legacy Beach Scene">
+    </section>
+
+    <!-- ================= Gallery ================= -->
+    <section class="section" style="padding-top:20px;" aria-label="Video gallery">
+      <div class="container">
+        <div class="showcase-grid">
+          <article class="glass showcase-card reveal">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Boss Arena</span>
+              <a href="https://www.youtube.com/watch?v=tbZJjbBsySI" target="_blank" rel="noopener" aria-label="Watch Boss Arena FX on YouTube">
+                <img src="Thubnails/op5.jpg" alt="Boss Arena FX — cinematic environment showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Boss Arena FX</h3>
+              <p>Cinematic boss arena environment with atmosphere and FX.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=tbZJjbBsySI" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-1">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Gameplay</span>
+              <a href="https://www.youtube.com/watch?v=BXLEB6zYZXY" target="_blank" rel="noopener" aria-label="Watch Fighting with team on YouTube">
+                <img src="Thubnails/op6.jpg" alt="Fighting with team — combat gameplay showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Fighting with Team</h3>
+              <p>Team combat and action gameplay choreography.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=BXLEB6zYZXY" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-2">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">UMG / UI</span>
+              <a href="https://youtu.be/Y-6wPstxG5A" target="_blank" rel="noopener" aria-label="Watch Skill Tree UMG on YouTube">
+                <img src="Thubnails/op9.png" alt="Skill Tree UMG — procedural skill tree interface" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Skill Tree UMG</h3>
+              <p>Procedural skill tree interface built with UMG.</p>
+              <a class="link-btn" href="https://youtu.be/Y-6wPstxG5A" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=I009vMfjcWg" target="_blank" rel="noopener" aria-label="Watch Cinematic Ocean on YouTube">
+                <img src="Thubnails/op2.jpg" alt="Cinematic Ocean — ocean and lighting showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Cinematic Ocean</h3>
+              <p>Atmospheric ocean and lighting cinematic.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=I009vMfjcWg" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-1">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=WBfkvfBscjM" target="_blank" rel="noopener" aria-label="Watch Shallow water scene on YouTube">
+                <img src="Thubnails/op3.jpg" alt="Shallow water scene — water and lighting study" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Shallow Water Scene</h3>
+              <p>Shallow water surface and lighting study.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=WBfkvfBscjM" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=sxiilgW-IMA" target="_blank" rel="noopener" aria-label="Watch Japanese Temple on YouTube">
+                <img src="Thubnails/op7.png" alt="Japanese Temple — environment showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Japanese Temple</h3>
+              <p>Japanese temple environment walkthrough.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=sxiilgW-IMA" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-1">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=xTXRgxee0yw" target="_blank" rel="noopener" aria-label="Watch Ruins and Temple on YouTube">
+                <img src="Thubnails/op1.jpg" alt="Ruins and Temple — environment showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Ruins and Temple</h3>
+              <p>Ruins and temple environment flythrough.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=xTXRgxee0yw" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-2">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Environment</span>
+              <a href="https://www.youtube.com/watch?v=hhU92KqdRC4" target="_blank" rel="noopener" aria-label="Watch Legacy Beach Scene on YouTube">
+                <img src="Thubnails/op4.jpg" alt="Legacy Beach Scene — environment showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Legacy Beach Scene</h3>
+              <p>Legacy beach scene environment and lighting.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=hhU92KqdRC4" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal">
+            <div class="showcase-card__media">
+              <span class="showcase-card__tag">Cinematic</span>
+              <a href="https://www.youtube.com/watch?v=7D-GkqhNaJU" target="_blank" rel="noopener" aria-label="Watch Cinematics Cliff on YouTube">
+                <img src="Thubnails/op8.jpg" alt="Cinematics Cliff — cliff-side cinematic showcase" loading="lazy" />
+              </a>
+            </div>
+            <div class="showcase-card__body">
+              <h3>Cinematics Cliff</h3>
+              <p>Cliff-side cinematic sequence and camera work.</p>
+              <a class="link-btn" href="https://www.youtube.com/watch?v=7D-GkqhNaJU" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-1">
+            <div class="showcase-card__body" style="justify-content:center;align-items:flex-start;">
+              <h3 style="color:var(--accent-2);">AI Boss Enemy</h3>
+              <p>Designed using Blueprint. Features interactive mechanics, level design, and custom UI.</p>
+            </div>
+          </article>
+
+          <article class="glass showcase-card reveal reveal-delay-2">
+            <div class="showcase-card__body" style="justify-content:center;align-items:flex-start;">
+              <h3 style="color:var(--accent-2);">AI Enemy Behavior</h3>
+              <p>Implemented using Unreal's behavior trees and Blueprint scripting.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="glass showcase-open reveal">
+          <div>
+            <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Back to the developer portfolio</h3>
+            <p style="color:var(--muted);font-size:0.95rem;">Explore gameplay projects, skills and the full Unreal workflow behind these pieces.</p>
+          </div>
+          <a class="btn btn--primary" href="ramw.html">
+            View Portfolio
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
           </a>
         </div>
       </div>
+    </section>
+  </main>
 
-  </section>
-
-  <footer>
-    <p>© 2025 Ramesh. All rights reserved.</p>
+  <!-- ================= Footer ================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Ramesh</p>
+        <p class="footer__role">Gameplay / Software Developer — Unreal Engine Showcase</p>
+      </div>
+      <div class="footer__tech">
+        <span class="chip chip--blue">Unreal Engine 5</span>
+        <span class="chip chip--violet">Blueprint</span>
+        <span class="chip chip--cyan">Niagara</span>
+        <span class="chip chip--cyan">Nanite</span>
+        <span class="chip chip--cyan">Megascans</span>
+      </div>
+      <div class="footer__links">
+        <a href="ramw.html">Portfolio</a>
+        <a href="figma.html">Figma</a>
+        <a href="https://github.com/rr188351" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p class="footer__copy">© <span class="js-year">2025</span> Ramesh. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script src="JS/main.js"></script>
 </body>
 </html>
