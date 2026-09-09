@@ -2511,6 +2511,6 @@ kbd {
      the cinematic override zeroed the original hero top padding, so the
      portrait/logo and first text lines could sit under the nav. */
   .hero.cinematic-scroll-section .hero__inner {
-    padding-top: calc(var(--nav-h) + 85px);
+    padding-top: calc(var(--nav-h) + 155px);
   }
 }
