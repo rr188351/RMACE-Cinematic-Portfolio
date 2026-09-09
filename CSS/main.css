@@ -2506,4 +2506,11 @@ kbd {
   .hero.cinematic-scroll-section .hero__content::before {
     inset: -30px -14px -24px -14px;
   }
+
+  /* Keep the hero content clear of the fixed nav bar on small viewports —
+     the cinematic override zeroed the original hero top padding, so the
+     portrait/logo and first text lines could sit under the nav. */
+  .hero.cinematic-scroll-section .hero__inner {
+    padding-top: calc(var(--nav-h) + 24px);
+  }
 }
