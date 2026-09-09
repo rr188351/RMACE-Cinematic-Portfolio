@@ -1677,10 +1677,12 @@ kbd {
    existing 16:10 cover treatment.
    ========================================================================== */
 .figma-card__media--portrait {
-  /* Match the real FitPulse phone-frame image (Figma3.png = 226x435) so the
-     full phone is always visible with zero letterboxing or cropping. */
-  aspect-ratio: 378 / 721;
-  max-height: 600px;
+  /* Replicates the Fitnplus case-study intro-slide stage exactly:
+     a tall full-width stage (cover-visual = min-height 620px) holding the
+     phone frame at its exact 300x608 size (276x560 / 248x504 via the same
+     responsive steps as the case study), centered, with the ambient glow.
+     632px = 608px phone + headroom for the -9px float animation. */
+  min-height: 632px;
   background:
     radial-gradient(140% 120% at 20% 0%, rgba(34, 211, 238, 0.16), transparent 55%),
     radial-gradient(140% 120% at 85% 100%, rgba(139, 92, 246, 0.2), transparent 55%),
@@ -1707,4 +1709,801 @@ kbd {
   border-radius: var(--radius-sm);
   border: 1px solid var(--stroke-soft);
   box-shadow: 0 16px 42px rgba(2, 6, 16, 0.45);
+}
+
+/* ==========================================================================
+   FitPulse phone-frame showreel (figma.html)
+   HTML/CSS recreation of the FitPulse app inside a phone frame, ported from
+   the Fitnplus case-study cover phone (4 app screens + dark/light crossfade).
+   Ported 1:1 with classes renamed to a scoped `fp-` prefix and theme tokens
+   kept as `--ct-*` inside .fp-theme-* layers, so nothing collides with the
+   shared design system. Driven by the showreel init in JS/main.js.
+   ========================================================================== */
+
+.fp-floater {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.fp-floater::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 440px;
+  height: 440px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.14), rgba(22, 163, 74, 0.09) 46%, transparent 70%);
+  filter: blur(42px);
+  pointer-events: none;
+  z-index: 0;
+  animation: fp-glow 8s ease-in-out infinite;
+}
+
+@keyframes fp-glow {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 1;  transform: translate(-50%, -50%) scale(1.06); }
+}
+
+/* ---------- Phone frame: cinematic entrance + calm float ---------- */
+.fp-phone {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  height: 608px;
+  padding: 12px;
+  border-radius: 46px;
+  background: linear-gradient(155deg, #20242b 0%, #0c0f14 48%, #05070a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 44px 90px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(52, 211, 153, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  --fp-ease: cubic-bezier(0.22, 0.9, 0.35, 1);
+  --fp-font-head: "Outfit", var(--font-sans);
+  --fp-font-body: "DM Sans", var(--font-sans);
+  animation:
+    fp-enter 1s var(--fp-ease) 0.12s both,
+    fp-float 7s ease-in-out 1.5s infinite;
+}
+
+.fp-phone::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 40px;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fp-phone::after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96px;
+  height: 24px;
+  border-radius: 13px;
+  background: #06070a;
+  z-index: 20;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes fp-enter {
+  from { opacity: 0; transform: translateY(32px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fp-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+
+/* ---------- Theme layers + screen stage ---------- */
+.fp-theme-layer {
+  position: absolute;
+  inset: 12px;
+  border-radius: 36px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 900ms cubic-bezier(0.22, 0.9, 0.35, 1);
+}
+
+.fp-theme-layer.fp-theme-dark { opacity: 1; }
+.fp-theme-light { pointer-events: none; }
+.fp-theme-layer .fp-screens { position: absolute; inset: 0; }
+
+.fp-theme-layer .fp-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 34px;
+  background: var(--ct-bg1), var(--ct-bg2), var(--ct-bg3);
+  color: var(--ct-text);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.985);
+  filter: blur(7px);
+  transition:
+    opacity 0.85s var(--fp-ease),
+    transform 0.85s var(--fp-ease),
+    filter 0.85s var(--fp-ease),
+    visibility 0s linear 0.85s;
+}
+
+.fp-theme-layer .fp-screen.s-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  filter: none;
+  z-index: 2;
+  transition:
+    opacity 0.85s var(--fp-ease),
+    transform 0.85s var(--fp-ease),
+    filter 0.85s var(--fp-ease),
+    visibility 0s linear 0s;
+}
+
+/* ---------- Theme tokens (dark default, light crossfade) ---------- */
+.fp-theme-dark {
+  --ct-bg1: radial-gradient(circle at 88% 4%, rgba(34, 211, 238, 0.16), transparent 34%);
+  --ct-bg2: radial-gradient(circle at 8% 92%, rgba(22, 163, 74, 0.14), transparent 40%);
+  --ct-bg3: linear-gradient(160deg, #071019 0%, #081018 48%, #06080f 100%);
+  --ct-glass: rgba(255, 255, 255, 0.065);
+  --ct-glass-2: rgba(255, 255, 255, 0.09);
+  --ct-border: rgba(255, 255, 255, 0.09);
+  --ct-border-accent: rgba(52, 211, 153, 0.28);
+  --ct-track: rgba(255, 255, 255, 0.1);
+  --ct-faint: rgba(255, 255, 255, 0.35);
+  --ct-text: #e8eef7;
+  --ct-text-2: #c2cfe0;
+  --ct-mute: #7e8ca3;
+  --ct-accent: #34d399;
+  --ct-accent-soft: rgba(52, 211, 153, 0.12);
+  --ct-accent2: #22d3ee;
+  --ct-chart: #34d399;
+  --ct-nav: rgba(7, 11, 17, 0.84);
+  --ct-shadow: rgba(0, 0, 0, 0.22);
+  --ct-ring: rgba(255, 255, 255, 0.16);
+  --ct-badge-bd: #06080f;
+  --ct-red: #f87171;
+}
+
+.fp-theme-light {
+  --ct-bg1: radial-gradient(circle at 88% 4%, rgba(34, 211, 238, 0.12), transparent 34%);
+  --ct-bg2: radial-gradient(circle at 8% 92%, rgba(22, 163, 74, 0.1), transparent 40%);
+  --ct-bg3: linear-gradient(160deg, #f0fdf4 0%, #dcfce7 16%, #cffafe 42%, #e0f2fe 60%, #faf5ff 82%);
+  --ct-glass: rgba(255, 255, 255, 0.82);
+  --ct-glass-2: rgba(255, 255, 255, 0.94);
+  --ct-border: rgba(15, 23, 42, 0.09);
+  --ct-border-accent: rgba(22, 163, 74, 0.26);
+  --ct-track: rgba(15, 23, 42, 0.07);
+  --ct-faint: #9ca3af;
+  --ct-text: #1f2937;
+  --ct-text-2: #374151;
+  --ct-mute: #6b7280;
+  --ct-accent: #16a34a;
+  --ct-accent-soft: rgba(22, 163, 74, 0.1);
+  --ct-accent2: #0891b2;
+  --ct-chart: #16a34a;
+  --ct-nav: rgba(255, 255, 255, 0.92);
+  --ct-shadow: rgba(15, 23, 42, 0.06);
+  --ct-ring: rgba(255, 255, 255, 0.9);
+  --ct-badge-bd: #ffffff;
+  --ct-red: #dc2626;
+}
+
+/* ---------- Status bar + scroll region ---------- */
+.fp-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 600 9.5px var(--fp-font-body);
+  color: var(--ct-mute);
+  padding: 14px 16px 2px;
+  flex-shrink: 0;
+  letter-spacing: 0.2px;
+}
+.fp-status .fp-dots { letter-spacing: 2px; }
+.fp-status i { font-style: normal; font-size: 8px; }
+
+.fp-scroll {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 11px 12px;
+  overflow: hidden;
+}
+
+/* ---------- Bottom nav with sliding hairline indicator ---------- */
+.fp-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 7px 4px 10px;
+  background: var(--ct-nav);
+  border-top: 1px solid var(--ct-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.fp-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 3px;
+  width: 19%;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, #16a34a, #0891b2);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.4);
+  transition: left 0.3s var(--fp-ease);
+}
+.fp-nav.ind1::before { left: 3%; }
+.fp-nav.ind2::before { left: 28%; }
+.fp-nav.ind3::before { left: 53%; }
+.fp-nav.ind4::before { left: 78%; }
+
+.fp-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font: 600 7px var(--fp-font-body);
+  color: var(--ct-mute);
+}
+.fp-tab span { font-size: 14px; line-height: 1.15; }
+.fp-tab.on { color: var(--ct-accent); font-weight: 700; }
+
+/* ---------- Core atoms (theme-aware via the --ct-* tokens) ---------- */
+.fp-row { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.fp-gap { gap: 8px; }
+.fp-spread { justify-content: space-between; }
+.fp-hdr { margin-bottom: 8px; }
+.fp-mute { font: 600 7.5px var(--fp-font-body); color: var(--ct-mute); line-height: 1.4; }
+.fp-name { font: 800 13px var(--fp-font-head); color: var(--ct-text); letter-spacing: -0.01em; }
+.fp-num {
+  font: 900 20px var(--fp-font-head);
+  color: var(--ct-text);
+  line-height: 1.06;
+  font-variant-numeric: tabular-nums;
+}
+.fp-num.sm { font-size: 15px; }
+.fp-num.xs { font-size: 13px; }
+.fp-num i { font-style: normal; font: 600 8px var(--fp-font-body); color: var(--ct-mute); margin-left: 2px; }
+.fp-num.lime { color: #65a30d; }
+.fp-up { font: 700 7px var(--fp-font-body); color: var(--ct-accent); margin-top: 2px; }
+.fp-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 7px;
+  border-radius: 999px;
+  font: 700 7px var(--fp-font-body);
+  white-space: nowrap;
+}
+.fp-chip.green { color: var(--ct-accent); background: var(--ct-accent-soft); border: 1px solid var(--ct-border-accent); }
+.fp-chip.orange { color: #fb923c; background: rgba(251, 146, 60, 0.12); border: 1px solid rgba(251, 146, 60, 0.3); }
+.fp-chip.cyan { color: var(--ct-accent2); background: rgba(8, 145, 178, 0.12); border: 1px solid rgba(8, 145, 178, 0.3); }
+.fp-chip.amber { color: #f59e0b; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); }
+.fp-chip.lime { color: #84cc16; background: rgba(101, 163, 13, 0.12); border: 1px solid rgba(101, 163, 13, 0.3); }
+.fp-bell {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background: var(--ct-glass-2);
+  border: 1px solid var(--ct-border);
+}
+.fp-bell b {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #dc2626;
+  color: #fff;
+  font: 800 6.5px var(--fp-font-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ct-badge-bd);
+}
+.fp-card {
+  min-width: 0;
+  flex: 1;
+  border-radius: 13px;
+  padding: 9px 10px;
+  background: var(--ct-glass);
+  border: 1px solid var(--ct-border);
+  box-shadow: 0 8px 20px var(--ct-shadow);
+  backdrop-filter: blur(6px);
+}
+.fp-row .fp-card { flex: 1; }
+.fp-t { font: 800 10px var(--fp-font-head); color: var(--ct-text); }
+.fp-go { font: 700 7.5px var(--fp-font-body); color: var(--ct-accent); }
+.fp-stitle { font: 800 18px var(--fp-font-head); color: var(--ct-text); letter-spacing: -0.01em; }
+.fp-sec {
+  font: 800 7.5px var(--fp-font-head);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--ct-mute);
+  margin: 4px 0 2px;
+}
+.fp-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #16a34a, #0891b2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 3px 10px rgba(22, 163, 74, 0.35);
+}
+.fp-ico {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: rgba(22, 163, 74, 0.12);
+  border: 1px solid rgba(22, 163, 74, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.fp-ico.tiny { width: 24px; height: 24px; font-size: 11px; border-radius: 7px; }
+.fp-btn {
+  padding: 6px 11px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #16a34a, #0891b2);
+  color: #fff;
+  font: 700 7.5px var(--fp-font-body);
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3);
+}
+.fp-seg {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--ct-glass);
+  border: 1px solid var(--ct-border);
+}
+.fp-seg i { padding: 4px 9px; border-radius: 999px; font: 700 7.5px var(--fp-font-body); color: var(--ct-mute); font-style: normal; }
+.fp-seg i.on { background: var(--ct-accent); color: #fff; }
+/* ---------- Steps bars + day labels + progress track ---------- */
+.fp-bars { display: flex; align-items: flex-end; gap: 3px; height: 28px; margin-top: 6px; }
+.fp-bars i {
+  flex: 1;
+  height: var(--h);
+  border-radius: 3px 3px 1px 1px;
+  background: rgba(52, 211, 153, 0.28);
+}
+.fp-bars i.hot { background: linear-gradient(180deg, #34d399, #22d3ee); box-shadow: 0 0 9px rgba(34, 211, 238, 0.35); }
+.fp-days { display: flex; justify-content: space-between; margin-top: 3px; }
+.fp-days span { font: 600 6.5px var(--fp-font-body); color: var(--ct-mute); flex: 1; text-align: center; }
+.fp-days span.hot { color: var(--ct-accent); font-weight: 700; }
+.fp-track { height: 5px; border-radius: 3px; background: var(--ct-track); margin: 5px 0 4px; overflow: hidden; }
+.fp-track i {
+  display: block;
+  height: 100%;
+  width: var(--w, 50%);
+  border-radius: 3px;
+  background: linear-gradient(90deg, #16a34a, #65a30d);
+}
+.fp-track.tk2 i { background: linear-gradient(90deg, #0891b2, #22d3ee); }
+.fp-footnote { margin-top: 4px; }
+
+/* ---------- Trend chart (SVG) ---------- */
+.fp-chart { width: 100%; height: 48px; display: block; margin: 4px 0 2px; }
+.fp-chart .fp-line { stroke: var(--ct-chart); stroke-width: 2.2; stroke-linecap: round; }
+.fp-chart .fp-dot { fill: var(--ct-chart); stroke: #fff; stroke-width: 1.2; }
+
+/* ---------- BMI + AI summary cards ---------- */
+.fp-bmi { display: flex; align-items: center; gap: 10px; }
+.fp-bm-right { margin-left: auto; text-align: right; font: 600 7.5px var(--fp-font-body); color: var(--ct-mute); line-height: 1.6; }
+.fp-ai, .fp-cyan { border-left: 3px solid var(--ct-accent); }
+.fp-cyan { border-left-color: var(--ct-accent2); }
+.fp-ai p, .fp-cyan p { margin: 5px 0 0; font: 600 8px/1.5 var(--fp-font-body); color: var(--ct-text-2); }
+
+/* ---------- Primary + ghost CTA rows ---------- */
+.fp-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #16a34a, #0891b2);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(22, 163, 74, 0.32);
+}
+.fp-cta .fp-go { color: #fff; }
+.fp-cta b { margin-left: auto; font-size: 14px; color: #fff; }
+.fp-cta-ghost { background: var(--ct-glass); border: 1px solid var(--ct-border); box-shadow: none; }
+.fp-cta-ghost .fp-go { color: var(--ct-text); }
+
+/* ---------- Achievement badges ---------- */
+.fp-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 2px; }
+.fp-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 8px;
+  border-radius: 11px;
+  background: var(--ct-glass);
+  border: 1px solid var(--ct-border);
+  font: 700 7px var(--fp-font-body);
+  color: var(--ct-text);
+  min-width: 0;
+}
+.fp-badge span { font-size: 12px; flex-shrink: 0; }
+.fp-badge.lock { opacity: 0.55; filter: saturate(0.4); }
+
+/* ---------- Leaderboard ---------- */
+.fp-lbrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 3px;
+  border-bottom: 1px solid var(--ct-track);
+}
+.fp-lbrow:last-child { border-bottom: 0; }
+.fp-lbrow > span { font-size: 13px; width: 18px; text-align: center; flex-shrink: 0; }
+.fp-lbrow b { flex: 1; font: 700 8.5px var(--fp-font-body); color: var(--ct-text); }
+.fp-lbrow em { font-style: normal; font: 700 8.5px var(--fp-font-body); color: var(--ct-mute); }
+.fp-lbrow.you {
+  background: rgba(22, 163, 74, 0.1);
+  border-radius: 9px;
+  padding: 6px 8px;
+  margin: 0 -5px;
+  border-bottom: 0;
+}
+.fp-lbrow.you b { color: var(--ct-accent); }
+.fp-av {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: rgba(22, 163, 74, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-style: normal;
+}
+.fp-av.sm { width: 24px; height: 24px; font-size: 12px; }
+
+/* ---------- Friends feed ---------- */
+.fp-feed p { margin: 6px 0 0; font: 600 8px/1.5 var(--fp-font-body); color: var(--ct-text-2); }
+.fp-fname { font: 700 8.5px var(--fp-font-body); color: var(--ct-text); }
+
+/* ---------- Account profile + menu ---------- */
+.fp-prof { text-align: center; padding: 15px 12px 12px; }
+.fp-prof-av {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #16a34a, #0891b2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 7px;
+  box-shadow: 0 0 0 4px var(--ct-ring), 0 0 0 6px rgba(22, 163, 74, 0.3);
+}
+.fp-prof-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--ct-track);
+}
+.fp-prof-stats div { text-align: center; }
+.fp-prof-stats b { display: block; font: 800 12px var(--fp-font-head); color: var(--ct-text); }
+.fp-prof-stats span { font: 600 7px var(--fp-font-body); color: var(--ct-mute); }
+.fp-menu { display: flex; flex-direction: column; gap: 5px; }
+.fp-men {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--ct-glass);
+  border: 1px solid var(--ct-border);
+}
+.fp-men b { display: block; font: 700 8px var(--fp-font-body); color: var(--ct-text); }
+.fp-men small { font: 600 7px var(--fp-font-body); color: var(--ct-mute); }
+.fp-men i { margin-left: auto; font-style: normal; color: var(--ct-faint); font-size: 13px; }
+.fp-men.out { border-color: rgba(220, 38, 38, 0.22); }
+.fp-foot { text-align: center; padding: 10px 0 2px; font: 600 7px var(--fp-font-body); color: var(--ct-faint); letter-spacing: 0.3px; }
+
+/* ---------- Modal phone + responsive sizing ---------- */
+/* Modal phone uses the exact case-study intro-slide phone size (300x608) —
+   same code, same size as the card phone, entrance/float animation kept.
+   Only the surrounding spacing is adjusted for the modal body. */
+.fp-floater--modal { margin: 14px auto 0; }
+
+@media (max-width: 860px) {
+  .fp-phone { width: 276px; height: 560px; }
+  .fp-theme-layer .fp-screen { border-radius: 30px; }
+}
+
+@media (max-width: 560px) {
+  .fp-phone { width: 248px; height: 504px; border-radius: 40px; }
+  .fp-theme-layer { inset: 10px; border-radius: 31px; }
+  .fp-theme-layer .fp-screen { border-radius: 28px; }
+}
+/* ==========================================================================
+   Cinematic scroll hero (ramw.html) — scroll-scrubbed WebP frame sequence
+   ---------------------------------------------------------------------------
+   The hero section doubles as the dedicated cinematic section:
+     · section height 400vh  → the full scroll distance of the effect
+     · .sticky-cinematic-frame (100vh, sticky) pins <canvas> + shade + loader
+     · the pre-existing .hero__inner content flows above the pinned canvas
+   Frame mapping (enforced in JS/cinematic.js):
+     progress 0%   → frames/frame_0001.webp
+     progress 100% → frames/frame_1438.webp
+   Scoped to .cinematic-scroll-section — no other section/page is affected.
+   ========================================================================== */
+
+.hero.cinematic-scroll-section {
+  display: block;               /* override .hero flex — content flows normally */
+  height: 400vh;                /* total cinematic scroll distance */
+  min-height: 0;
+  padding: 0;
+  overflow: visible;            /* REQUIRED: overflow:hidden here would break position:sticky */
+}
+
+/* Pinned cinematic stage — canvas + shade + loader live here.
+   This is the BACKGROUND layer (z-index 0). Hero content (z-index 10)
+   always stacks above it. */
+.sticky-cinematic-frame {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@supports (height: 100svh) {
+  .sticky-cinematic-frame { height: 100svh; }  /* mobile browser UI-safe height */
+}
+
+#cinematicCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;                   /* JS fades in on first frame, fades out at section end */
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* Subtle darkening so the existing glassmorphism text stays primary.
+   Centre-weighted darkening sits behind the hero text column; the frame
+   environment stays clearly visible around it. */
+.cinematic-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 46% 40%, rgba(5, 7, 13, 0.28) 0%, rgba(5, 7, 13, 0.18) 46%, rgba(5, 7, 13, 0.55) 100%),
+    linear-gradient(to bottom,
+      rgba(5, 7, 13, 0.66),
+      rgba(5, 7, 13, 0.34) 26%,
+      rgba(5, 7, 13, 0.36) 55%,
+      rgba(5, 7, 13, 0.66) 78%,
+      rgba(5, 7, 13, 0.94) 100%);
+}
+
+/* Existing hero content flows above the pinned canvas — explicit top layer */
+.hero.cinematic-scroll-section .hero__inner {
+  position: relative;
+  z-index: 10;
+  isolation: isolate;
+  pointer-events: auto;
+  margin-top: -100vh;           /* pull content up over the pinned stage */
+  min-height: 100vh;
+  align-content: center;        /* vertical centering previously done by .hero flex */
+}
+
+/* Glassmorphism loading pill */
+.cinematic-loader {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(26px, 6vh, 64px);
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  white-space: nowrap;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.cinematic-loader[hidden] { display: none; }
+
+.cinematic-loader.is-done {
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+  pointer-events: none;
+}
+
+.cinematic-loader__ring {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-top-color: var(--accent);
+  animation: spin 0.9s linear infinite;
+  flex-shrink: 0;
+}
+
+.cinematic-loader__pct {
+  color: var(--accent-2);
+  font-weight: 700;
+  min-width: 3em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .cinematic-loader {
+    bottom: 20px;
+    font-size: 0.78rem;
+    padding: 9px 16px;
+    max-width: calc(100vw - 32px);
+  }
+  .cinematic-loader__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+/* ==========================================================================
+   Hero text readability over the cinematic environment (ramw.html)
+   Scoped ONLY to .cinematic-scroll-section. The frame-scroll engine,
+   canvas, shade and 400vh section are UNTOUCHED — this is purely
+   contrast / layering polish for the hero copy.
+   ========================================================================== */
+
+/* Text column becomes its own top-most layer + local blurred dark veil
+   behind the copy. The veil is paint-only (pointer-events: none) and sits
+   above the cinematic layers but behind the text (z-index -1 within the
+   isolated hero__content stacking context). */
+.hero.cinematic-scroll-section .hero__content {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.hero.cinematic-scroll-section .hero__content::before {
+  content: "";
+  position: absolute;
+  inset: -38px -48px -30px -42px;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 26px;
+  background: radial-gradient(
+    ellipse at 32% 42%,
+    rgba(5, 10, 20, 0.52) 0%,
+    rgba(5, 10, 20, 0.30) 46%,
+    rgba(5, 10, 20, 0.14) 72%,
+    rgba(5, 10, 20, 0) 100%
+  );
+  filter: blur(14px);
+}
+
+/* Eyebrow — brighter cyan + soft glow so it never blends into bright folds */
+.hero.cinematic-scroll-section .hero__eyebrow {
+  color: #7ce7ff;
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.4), 0 1px 2px rgba(5, 7, 13, 0.5);
+}
+
+/* RAMESH — keep the existing gradient; add a soft dark halo for separation */
+.hero.cinematic-scroll-section .hero__title {
+  text-shadow: 0 2px 26px rgba(5, 7, 13, 0.55);
+}
+
+/* Subtitle — full-contrast white + crisp halo */
+.hero.cinematic-scroll-section .hero__role {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 2px rgba(5, 7, 13, 0.5), 0 3px 24px rgba(5, 7, 13, 0.4);
+}
+
+.hero.cinematic-scroll-section .hero__role span {
+  color: #67e8f9;
+  text-shadow: 0 0 14px rgba(34, 211, 238, 0.45), 0 1px 2px rgba(5, 7, 13, 0.5);
+}
+
+/* Description — REQUIRED high-contrast value (was var(--muted) = #96a2b5,
+   which washed out over bright frames). Never goes below 0.85 alpha. */
+.hero.cinematic-scroll-section .hero__desc {
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 2px rgba(5, 7, 13, 0.55), 0 2px 24px rgba(5, 7, 13, 0.4);
+}
+
+/* Tech chips — darker backing + crisper borders so they read over frames */
+.hero.cinematic-scroll-section .hero__tech .chip {
+  background: rgba(5, 10, 20, 0.42);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 1px 10px rgba(5, 7, 13, 0.55);
+}
+
+.hero.cinematic-scroll-section .hero__tech .chip--blue { color: #9adcff; }
+.hero.cinematic-scroll-section .hero__tech .chip--cyan { color: #7cf0ff; }
+.hero.cinematic-scroll-section .hero__tech .chip--violet { color: #d3c0ff; }
+
+/* Actions + buttons — explicit top layer, always clickable */
+.hero.cinematic-scroll-section .hero__actions {
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
+}
+
+.hero.cinematic-scroll-section .hero__actions .btn {
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
+}
+
+.hero.cinematic-scroll-section .hero__actions .btn--primary {
+  box-shadow: 0 8px 26px rgba(56, 189, 248, 0.28), 0 6px 22px rgba(5, 7, 13, 0.5);
+}
+
+.hero.cinematic-scroll-section .hero__actions .btn--ghost {
+  background: rgba(10, 17, 29, 0.4);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 18px rgba(5, 7, 13, 0.45);
+}
+
+/* Stats — crisper divider + high-contrast labels */
+.hero.cinematic-scroll-section .hero__stats {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+.hero.cinematic-scroll-section .hero__stat strong {
+  text-shadow: 0 2px 18px rgba(5, 7, 13, 0.45);
+}
+
+.hero.cinematic-scroll-section .hero__stat span {
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 0 1px 2px rgba(5, 7, 13, 0.5);
+}
+
+/* Mobile / tablet — the veil may not push horizontal overflow; tighten the
+   overhang so the text column width (+ blur) always fits the viewport. */
+@media (max-width: 900px) {
+  .hero.cinematic-scroll-section .hero__content::before {
+    inset: -30px -14px -24px -14px;
+  }
 }

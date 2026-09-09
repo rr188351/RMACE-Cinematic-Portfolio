@@ -13,6 +13,9 @@
   <meta property="og:description" content="UI/UX and interface design — a project management dashboard and a mobile fitness app, design-to-code." />
   <meta property="og:image" content="Thubnails/Figma1.png" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="CSS/main.css" />
   <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   <link rel="icon" type="image/png" href="ri.png" />
@@ -102,7 +105,194 @@
           <article class="glass figma-card reveal reveal-delay-1">
             <div class="figma-card__media figma-card__media--portrait">
               <span class="figma-card__tag">Mobile App</span>
-              <img src="Thubnails/Figma.png" alt="FitPulse Application — fitness app UI inside a phone frame" loading="lazy" />
+              <div class="fp-floater">
+                <div class="fp-phone" id="fp-phone-card" role="img" aria-label="FitPulse application preview - Home, Progress, Community and Account screens">
+                  <div class="fp-theme-layer fp-theme-dark">
+                    <div class="fp-screens">
+                      <!-- SCREEN 01 &#xB7; HOME / DASHBOARD -->
+                      <div class="fp-screen s-active" data-screen="home">
+                      <div class="fp-status"><span>9:41</span><span class="fp-dots">&#x25CF;&#x25CF;&#x25CF;</span><span>5G <i>&#x1F50B;</i></span></div>
+                      <div class="fp-scroll">
+                      <div class="fp-row fp-spread fp-hdr">
+                        <div class="fp-row fp-gap">
+                        <span class="fp-avatar" aria-hidden="true">&#x1F469;&#x200D;&#x1F9B1;</span>
+                        <div><div class="fp-mute">Good Morning &#x1F44B;</div><div class="fp-name">Ananya</div></div>
+                        </div>
+                        <div class="fp-row fp-gap">
+                        <span class="fp-chip orange">&#x1F525; 14</span>
+                        <span class="fp-bell">&#x1F514;<b>4</b></span>
+                        </div>
+                      </div>
+                      <div class="fp-card">
+                        <div class="fp-row fp-spread" style="align-items:flex-start">
+                        <div>
+                          <div class="fp-mute">Today's Steps</div>
+                          <div class="fp-num">12,847</div>
+                          <div class="fp-up">&#x2191; 28% vs yesterday</div>
+                        </div>
+                        <span class="fp-chip green">128% Goal</span>
+                        </div>
+                        <div class="fp-bars"><i style="--h:48%"></i><i style="--h:63%"></i><i style="--h:58%"></i><i style="--h:76%"></i><i style="--h:67%"></i><i style="--h:87%"></i><i class="hot" style="--h:100%"></i></div>
+                        <div class="fp-days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span class="hot">S</span></div>
+                      </div>
+                      <div class="fp-row">
+                        <div class="fp-card"><div class="fp-mute">&#x2764;&#xFE0F; Heart Rate</div><div class="fp-num sm">72 <i>bpm</i></div><div class="fp-mute">Resting &#xB7; Normal</div></div>
+                        <div class="fp-card"><div class="fp-mute">&#x1F525; Calories</div><div class="fp-num sm">1,847 <i>kcal</i></div><div class="fp-mute">482 remaining</div></div>
+                      </div>
+                      <div class="fp-row">
+                        <div class="fp-card"><div class="fp-mute">&#x1F4A7; Water</div><div class="fp-num xs">1.8<i>L</i></div><div class="fp-mute">Goal: 2.5L</div></div>
+                        <div class="fp-card"><div class="fp-mute">&#x1F634; Sleep</div><div class="fp-num xs">7.4<i>h</i></div><div class="fp-mute">Deep 2.1h</div></div>
+                        <div class="fp-card"><div class="fp-mute">&#x1F9E0; Stress</div><div class="fp-num xs lime">Low</div><div class="fp-mute">Score 24/100</div></div>
+                      </div>
+                      <div class="fp-card fp-ai">
+                        <div class="fp-row fp-spread"><b class="fp-t">&#x2728; AI Insights</b><span class="fp-chip cyan">New</span></div>
+                        <p>Great progress this week! Hit step goal 5 days in a row.</p>
+                        <p>Consider a rest day &#x2014; recovery maximizes muscle gains.</p>
+                      </div>
+                      <div class="fp-card">
+                        <div class="fp-row fp-spread"><b class="fp-t">&#x1F3C6; Weekly Challenge</b><span class="fp-chip amber">3 days left</span></div>
+                        <div class="fp-mute">10,000 Steps Every Day</div>
+                        <div class="fp-track"><i style="--w:72%"></i></div>
+                        <div class="fp-row fp-spread fp-footnote"><span class="fp-mute">72% completed</span><span class="fp-go">1,247 participants</span></div>
+                      </div>
+                      <div class="fp-cta"><span class="fp-ico" aria-hidden="true">&#x1F3CB;&#xFE0F;</span><div><div class="fp-go">Start Workout</div><div class="fp-mute">Today: Upper body strength</div></div><b aria-hidden="true">&#x203A;</b></div>
+                      </div>
+                      <div class="fp-nav ind1">
+                      <div class="fp-tab on"><span>&#x1F3E0;</span>Home</div>
+                      <div class="fp-tab"><span>&#x1F4CA;</span>Progress</div>
+                      <div class="fp-tab"><span>&#x1F465;</span>Community</div>
+                      <div class="fp-tab"><span>&#x1F464;</span>Account</div>
+                      </div>
+                      </div>
+                      <!-- SCREEN 02 &#xB7; PROGRESS -->
+                      <div class="fp-screen" aria-hidden="true" data-screen="progress">
+                      <div class="fp-status"><span>9:41</span><span class="fp-dots">&#x25CF;&#x25CF;&#x25CF;</span><span>5G <i>&#x1F50B;</i></span></div>
+                      <div class="fp-scroll">
+                      <div class="fp-row fp-spread" style="margin-bottom:8px">
+                        <b class="fp-stitle">Progress</b>
+                        <span class="fp-seg"><i class="on">Week</i><i>Month</i></span>
+                      </div>
+                      <div class="fp-row" style="margin-bottom:8px">
+                        <div class="fp-card c3"><div class="fp-ico">&#x1F3CB;&#xFE0F;</div><b>24</b><span class="fp-mute">Workouts</span></div>
+                        <div class="fp-card c3"><div class="fp-ico">&#x1F4C5;</div><b>19/30</b><span class="fp-mute">Active Days</span></div>
+                        <div class="fp-card c3"><div class="fp-ico">&#x1F45F;</div><b>9.8k</b><span class="fp-mute">Avg Steps</span></div>
+                      </div>
+                      <div class="fp-card" style="margin-bottom:8px">
+                        <div class="fp-row fp-spread"><b class="fp-t">Weight Trend</b><span class="fp-chip green">&#x2193; 3.2 kg</span></div>
+                        <div class="fp-mute" style="margin-bottom:2px">Lost 3.2 kg this month</div>
+                        <svg class="fp-chart" viewBox="0 0 240 58" preserveAspectRatio="none" aria-hidden="true">
+                        <defs>
+                          <linearGradient id="fp-w-card" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0" stop-color="#34d399" stop-opacity="0.3"></stop>
+                          <stop offset="1" stop-color="#34d399" stop-opacity="0"></stop>
+                          </linearGradient>
+                        </defs>
+                        <path class="fp-area" d="M0 14 C 40 12, 60 22, 100 26 C 140 30, 180 34, 240 42 L 240 58 L 0 58 Z" fill="url(#fp-w-card)"></path>
+                        <path class="fp-line" d="M0 14 C 40 12, 60 22, 100 26 C 140 30, 180 34, 240 42" fill="none"></path>
+                        <circle class="fp-dot" cx="240" cy="42" r="3"></circle>
+                        </svg>
+                        <div class="fp-days"><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span class="hot">Now</span></div>
+                      </div>
+                      <div class="fp-card fp-bmi" style="margin-bottom:8px">
+                        <span class="fp-ico" aria-hidden="true">&#x2695;&#xFE0F;</span>
+                        <div><div class="fp-mute">BMI Score</div><div class="fp-num sm" style="color:var(--ct-chart)">22.4</div><span class="fp-chip green">Normal Weight</span></div>
+                        <div class="fp-bm-right"><div>178 cm</div><div>71.0 kg</div></div>
+                      </div>
+                      <div class="fp-card fp-cyan" style="margin-bottom:8px">
+                        <b class="fp-t" style="color:var(--ct-accent2)">&#x2728; AI Monthly Summary</b>
+                        <p>Outstanding month! 19/30 step goals hit and 3.2 kg lost. Keep it up! &#x1F4AA;</p>
+                      </div>
+                      <div class="fp-mute fp-sec">Achievement Badges</div>
+                      <div class="fp-badges">
+                        <div class="fp-badge"><span aria-hidden="true">&#x1F525;</span><b>100 Day Streak</b></div>
+                        <div class="fp-badge"><span aria-hidden="true">&#x1F45F;</span><b>500K Steps</b></div>
+                        <div class="fp-badge lock"><span aria-hidden="true">&#x1F4A7;</span><b>30-Day Hydration</b></div>
+                        <div class="fp-badge lock"><span aria-hidden="true">&#x1F4AA;</span><b>Strength Master</b></div>
+                      </div>
+                      <div class="fp-cta fp-cta-ghost"><span class="fp-ico">&#x1F4C4;</span><span class="fp-go">Download PDF Report</span></div>
+                      </div>
+                      <div class="fp-nav ind2">
+                      <div class="fp-tab"><span>&#x1F3E0;</span>Home</div>
+                      <div class="fp-tab on"><span>&#x1F4CA;</span>Progress</div>
+                      <div class="fp-tab"><span>&#x1F465;</span>Community</div>
+                      <div class="fp-tab"><span>&#x1F464;</span>Account</div>
+                      </div>
+                      </div>
+                      <!-- SCREEN 03 &#xB7; COMMUNITY -->
+                      <div class="fp-screen" aria-hidden="true" data-screen="community">
+                      <div class="fp-status"><span>9:41</span><span class="fp-dots">&#x25CF;&#x25CF;&#x25CF;</span><span>5G <i>&#x1F50B;</i></span></div>
+                      <div class="fp-scroll">
+                      <div class="fp-row fp-spread" style="align-items:flex-start;margin-bottom:6px">
+                        <div><b class="fp-stitle">Community</b><div class="fp-mute">Challenges, friends &amp; achievements</div></div>
+                        <span class="fp-btn">+ Join Challenge</span>
+                      </div>
+                      <div class="fp-mute fp-sec">Active Challenges</div>
+                      <div class="fp-row" style="margin-bottom:8px">
+                        <div class="fp-card c3"><div class="fp-ico">&#x1F45F;</div><b class="fp-t">Weekly 70K</b><div class="fp-mute">3d left</div><div class="fp-track"><i style="--w:72%"></i></div><div class="fp-go">72%</div></div>
+                        <div class="fp-card c3"><div class="fp-ico" style="color:var(--ct-accent2)">&#x1F4A7;</div><b class="fp-t">Hydration Month</b><div class="fp-mute">18d left</div><div class="fp-track tk2"><i style="--w:54%"></i></div><div class="fp-go" style="color:var(--ct-accent2)">54%</div></div>
+                      </div>
+                      <div class="fp-card fp-lb" style="margin-bottom:8px">
+                        <div class="fp-row fp-spread" style="margin-bottom:6px"><b class="fp-t">&#x1F3C6; Leaderboard</b><span class="fp-chip amber">This Week</span></div>
+                        <div class="fp-lbrow"><span aria-hidden="true">&#x1F947;</span><i class="fp-av">&#x1F469;&#x200D;&#x1F9B1;</i><b>Ananya S.</b><em>86,420</em></div>
+                        <div class="fp-lbrow"><span aria-hidden="true">&#x1F948;</span><i class="fp-av">&#x1F9D1;&#x200D;&#x1F9B0;</i><b>Rahul K.</b><em>79,100</em></div>
+                        <div class="fp-lbrow"><span aria-hidden="true">&#x1F949;</span><i class="fp-av">&#x1F469;&#x200D;&#x1F9B3;</i><b>Priya M.</b><em>71,850</em></div>
+                        <div class="fp-lbrow you"><span aria-hidden="true">8&#xFE0F;&#x20E3;</span><i class="fp-av">&#x1F9D1;</i><b>You</b><em>65,947</em></div>
+                      </div>
+                      <div class="fp-mute fp-sec">Friends Activity</div>
+                      <div class="fp-card fp-feed"><div class="fp-row fp-gap"><span class="fp-av sm">&#x1F9D1;&#x200D;&#x1F9B0;</span><div><div class="fp-fname">Rahul K.</div><div class="fp-mute">2h ago</div></div></div><p>Completed a 5K run in 28:30 &#x1F3C3; Personal best!</p></div>
+                      <div class="fp-card fp-feed"><div class="fp-row fp-gap"><span class="fp-av sm">&#x1F469;&#x200D;&#x1F9B3;</span><div><div class="fp-fname">Priya M.</div><div class="fp-mute">4h ago</div></div></div><p>Hit 100-day streak! &#x1F525; So proud of this milestone.</p></div>
+                      <div class="fp-card fp-feed"><div class="fp-row fp-gap"><span class="fp-av sm">&#x1F9D1;&#x200D;&#x1F9B1;</span><div><div class="fp-fname">Dev R.</div><div class="fp-mute">6h ago</div></div></div><p>New PR: Bench Press 100kg &#x1F4AA; Strength is growing!</p></div>
+                      </div>
+                      <div class="fp-nav ind3">
+                      <div class="fp-tab"><span>&#x1F3E0;</span>Home</div>
+                      <div class="fp-tab"><span>&#x1F4CA;</span>Progress</div>
+                      <div class="fp-tab on"><span>&#x1F465;</span>Community</div>
+                      <div class="fp-tab"><span>&#x1F464;</span>Account</div>
+                      </div>
+                      </div>
+                      <!-- SCREEN 04 &#xB7; ACCOUNT -->
+                      <div class="fp-screen" aria-hidden="true" data-screen="account">
+                      <div class="fp-status"><span>9:41</span><span class="fp-dots">&#x25CF;&#x25CF;&#x25CF;</span><span>5G <i>&#x1F50B;</i></span></div>
+                      <div class="fp-scroll">
+                      <div class="fp-row fp-spread" style="margin-bottom:8px">
+                        <span class="fp-ico tiny" aria-hidden="true">&#x2699;&#xFE0F;</span>
+                        <b class="fp-stitle">Account</b>
+                        <span class="fp-ico tiny" aria-hidden="true"></span>
+                      </div>
+                      <div class="fp-card fp-prof" style="margin-bottom:8px">
+                        <span class="fp-prof-av" aria-hidden="true">&#x1F469;&#x200D;&#x1F9B1;</span>
+                        <div class="fp-name">Ananya Sharma</div>
+                        <div class="fp-mute">ananya@fitpulse.app</div>
+                        <span class="fp-chip lime">&#x2B50; FitPulse Pro</span>
+                        <div class="fp-prof-stats">
+                        <div><b>247</b><span>Workouts</span></div>
+                        <div><b>100&#x1F525;</b><span>Day Streak</span></div>
+                        <div><b>18</b><span>Badges</span></div>
+                        </div>
+                      </div>
+                      <div class="fp-menu">
+                        <div class="fp-men"><span class="fp-ico tiny">&#x270F;&#xFE0F;</span><div><b>Edit Profile</b><small>Update your information</small></div><i aria-hidden="true">&#x203A;</i></div>
+                        <div class="fp-men"><span class="fp-ico tiny">&#x1F3AF;</span><div><b>Goals &amp; Progress</b><small>Track your milestones</small></div><i aria-hidden="true">&#x203A;</i></div>
+                        <div class="fp-men"><span class="fp-ico tiny">&#x231A;</span><div><b>Device Sync</b><small>Manage connected devices</small></div><i aria-hidden="true">&#x203A;</i></div>
+                        <div class="fp-men"><span class="fp-ico tiny">&#x2B50;</span><div><b>Subscription</b><small>FitPulse Pro &#xB7; Active</small></div><i aria-hidden="true">&#x203A;</i></div>
+                        <div class="fp-men"><span class="fp-ico tiny">&#x1F3C6;</span><div><b>Personal Records</b><small>Your best performances</small></div><i aria-hidden="true">&#x203A;</i></div>
+                        <div class="fp-men"><span class="fp-ico tiny">&#x1F512;</span><div><b>Privacy &amp; Security</b><small>Manage your data</small></div><i aria-hidden="true">&#x203A;</i></div>
+                        <div class="fp-men out"><span class="fp-ico tiny">&#x1F6AA;</span><div><b style="color:var(--ct-red)">Sign Out</b></div></div>
+                      </div>
+                      <div class="fp-foot">FitPulse v3.2.1 &#xB7; Member since Jan 2024</div>
+                      </div>
+                      <div class="fp-nav ind4">
+                      <div class="fp-tab"><span>&#x1F3E0;</span>Home</div>
+                      <div class="fp-tab"><span>&#x1F4CA;</span>Progress</div>
+                      <div class="fp-tab"><span>&#x1F465;</span>Community</div>
+                      <div class="fp-tab on"><span>&#x1F464;</span>Account</div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fp-theme-layer fp-theme-light" aria-hidden="true"></div>
+                </div>
+              </div>
             </div>
             <div class="figma-card__body">
               <h3>FitPulse Application</h3>
@@ -266,7 +456,194 @@
         <h3 id="figma-modal-2-title">FitPulse Application</h3>
       </div>
       <div class="modal__body">
-        <img class="modal__phone" src="Thubnails/Figma3.png" alt="FitPulse Application — fitness app UI inside a phone frame" loading="lazy" />
+        <div class="fp-floater fp-floater--modal">
+          <div class="fp-phone" id="fp-phone-modal" role="img" aria-label="FitPulse application preview - Home, Progress, Community and Account screens">
+            <div class="fp-theme-layer fp-theme-dark">
+              <div class="fp-screens">
+                <!-- SCREEN 01 &#xB7; HOME / DASHBOARD -->
+                <div class="fp-screen s-active" data-screen="home">
+                <div class="fp-status"><span>9:41</span><span class="fp-dots">&#x25CF;&#x25CF;&#x25CF;</span><span>5G <i>&#x1F50B;</i></span></div>
+                <div class="fp-scroll">
+                <div class="fp-row fp-spread fp-hdr">
+                  <div class="fp-row fp-gap">
+                  <span class="fp-avatar" aria-hidden="true">&#x1F469;&#x200D;&#x1F9B1;</span>
+                  <div><div class="fp-mute">Good Morning &#x1F44B;</div><div class="fp-name">Ananya</div></div>
+                  </div>
+                  <div class="fp-row fp-gap">
+                  <span class="fp-chip orange">&#x1F525; 14</span>
+                  <span class="fp-bell">&#x1F514;<b>4</b></span>
+                  </div>
+                </div>
+                <div class="fp-card">
+                  <div class="fp-row fp-spread" style="align-items:flex-start">
+                  <div>
+                    <div class="fp-mute">Today's Steps</div>
+                    <div class="fp-num">12,847</div>
+                    <div class="fp-up">&#x2191; 28% vs yesterday</div>
+                  </div>
+                  <span class="fp-chip green">128% Goal</span>
+                  </div>
+                  <div class="fp-bars"><i style="--h:48%"></i><i style="--h:63%"></i><i style="--h:58%"></i><i style="--h:76%"></i><i style="--h:67%"></i><i style="--h:87%"></i><i class="hot" style="--h:100%"></i></div>
+                  <div class="fp-days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span class="hot">S</span></div>
+                </div>
+                <div class="fp-row">
+                  <div class="fp-card"><div class="fp-mute">&#x2764;&#xFE0F; Heart Rate</div><div class="fp-num sm">72 <i>bpm</i></div><div class="fp-mute">Resting &#xB7; Normal</div></div>
+                  <div class="fp-card"><div class="fp-mute">&#x1F525; Calories</div><div class="fp-num sm">1,847 <i>kcal</i></div><div class="fp-mute">482 remaining</div></div>
+                </div>
+                <div class="fp-row">
+                  <div class="fp-card"><div class="fp-mute">&#x1F4A7; Water</div><div class="fp-num xs">1.8<i>L</i></div><div class="fp-mute">Goal: 2.5L</div></div>
+                  <div class="fp-card"><div class="fp-mute">&#x1F634; Sleep</div><div class="fp-num xs">7.4<i>h</i></div><div class="fp-mute">Deep 2.1h</div></div>
+                  <div class="fp-card"><div class="fp-mute">&#x1F9E0; Stress</div><div class="fp-num xs lime">Low</div><div class="fp-mute">Score 24/100</div></div>
+                </div>
+                <div class="fp-card fp-ai">
+                  <div class="fp-row fp-spread"><b class="fp-t">&#x2728; AI Insights</b><span class="fp-chip cyan">New</span></div>
+                  <p>Great progress this week! Hit step goal 5 days in a row.</p>
+                  <p>Consider a rest day &#x2014; recovery maximizes muscle gains.</p>
+                </div>
+                <div class="fp-card">
+                  <div class="fp-row fp-spread"><b class="fp-t">&#x1F3C6; Weekly Challenge</b><span class="fp-chip amber">3 days left</span></div>
+                  <div class="fp-mute">10,000 Steps Every Day</div>
+                  <div class="fp-track"><i style="--w:72%"></i></div>
+                  <div class="fp-row fp-spread fp-footnote"><span class="fp-mute">72% completed</span><span class="fp-go">1,247 participants</span></div>
+                </div>
+                <div class="fp-cta"><span class="fp-ico" aria-hidden="true">&#x1F3CB;&#xFE0F;</span><div><div class="fp-go">Start Workout</div><div class="fp-mute">Today: Upper body strength</div></div><b aria-hidden="true">&#x203A;</b></div>
+                </div>
+                <div class="fp-nav ind1">
+                <div class="fp-tab on"><span>&#x1F3E0;</span>Home</div>
+                <div class="fp-tab"><span>&#x1F4CA;</span>Progress</div>
+                <div class="fp-tab"><span>&#x1F465;</span>Community</div>
+                <div class="fp-tab"><span>&#x1F464;</span>Account</div>
+                </div>
+                </div>
+                <!-- SCREEN 02 &#xB7; PROGRESS -->
+                <div class="fp-screen" aria-hidden="true" data-screen="progress">
+                <div class="fp-status"><span>9:41</span><span class="fp-dots">&#x25CF;&#x25CF;&#x25CF;</span><span>5G <i>&#x1F50B;</i></span></div>
+                <div class="fp-scroll">
+                <div class="fp-row fp-spread" style="margin-bottom:8px">
+                  <b class="fp-stitle">Progress</b>
+                  <span class="fp-seg"><i class="on">Week</i><i>Month</i></span>
+                </div>
+                <div class="fp-row" style="margin-bottom:8px">
+                  <div class="fp-card c3"><div class="fp-ico">&#x1F3CB;&#xFE0F;</div><b>24</b><span class="fp-mute">Workouts</span></div>
+                  <div class="fp-card c3"><div class="fp-ico">&#x1F4C5;</div><b>19/30</b><span class="fp-mute">Active Days</span></div>
+                  <div class="fp-card c3"><div class="fp-ico">&#x1F45F;</div><b>9.8k</b><span class="fp-mute">Avg Steps</span></div>
+                </div>
+                <div class="fp-card" style="margin-bottom:8px">
+                  <div class="fp-row fp-spread"><b class="fp-t">Weight Trend</b><span class="fp-chip green">&#x2193; 3.2 kg</span></div>
+                  <div class="fp-mute" style="margin-bottom:2px">Lost 3.2 kg this month</div>
+                  <svg class="fp-chart" viewBox="0 0 240 58" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="fp-w-modal" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#34d399" stop-opacity="0.3"></stop>
+                    <stop offset="1" stop-color="#34d399" stop-opacity="0"></stop>
+                    </linearGradient>
+                  </defs>
+                  <path class="fp-area" d="M0 14 C 40 12, 60 22, 100 26 C 140 30, 180 34, 240 42 L 240 58 L 0 58 Z" fill="url(#fp-w-modal)"></path>
+                  <path class="fp-line" d="M0 14 C 40 12, 60 22, 100 26 C 140 30, 180 34, 240 42" fill="none"></path>
+                  <circle class="fp-dot" cx="240" cy="42" r="3"></circle>
+                  </svg>
+                  <div class="fp-days"><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span class="hot">Now</span></div>
+                </div>
+                <div class="fp-card fp-bmi" style="margin-bottom:8px">
+                  <span class="fp-ico" aria-hidden="true">&#x2695;&#xFE0F;</span>
+                  <div><div class="fp-mute">BMI Score</div><div class="fp-num sm" style="color:var(--ct-chart)">22.4</div><span class="fp-chip green">Normal Weight</span></div>
+                  <div class="fp-bm-right"><div>178 cm</div><div>71.0 kg</div></div>
+                </div>
+                <div class="fp-card fp-cyan" style="margin-bottom:8px">
+                  <b class="fp-t" style="color:var(--ct-accent2)">&#x2728; AI Monthly Summary</b>
+                  <p>Outstanding month! 19/30 step goals hit and 3.2 kg lost. Keep it up! &#x1F4AA;</p>
+                </div>
+                <div class="fp-mute fp-sec">Achievement Badges</div>
+                <div class="fp-badges">
+                  <div class="fp-badge"><span aria-hidden="true">&#x1F525;</span><b>100 Day Streak</b></div>
+                  <div class="fp-badge"><span aria-hidden="true">&#x1F45F;</span><b>500K Steps</b></div>
+                  <div class="fp-badge lock"><span aria-hidden="true">&#x1F4A7;</span><b>30-Day Hydration</b></div>
+                  <div class="fp-badge lock"><span aria-hidden="true">&#x1F4AA;</span><b>Strength Master</b></div>
+                </div>
+                <div class="fp-cta fp-cta-ghost"><span class="fp-ico">&#x1F4C4;</span><span class="fp-go">Download PDF Report</span></div>
+                </div>
+                <div class="fp-nav ind2">
+                <div class="fp-tab"><span>&#x1F3E0;</span>Home</div>
+                <div class="fp-tab on"><span>&#x1F4CA;</span>Progress</div>
+                <div class="fp-tab"><span>&#x1F465;</span>Community</div>
+                <div class="fp-tab"><span>&#x1F464;</span>Account</div>
+                </div>
+                </div>
+                <!-- SCREEN 03 &#xB7; COMMUNITY -->
+                <div class="fp-screen" aria-hidden="true" data-screen="community">
+                <div class="fp-status"><span>9:41</span><span class="fp-dots">&#x25CF;&#x25CF;&#x25CF;</span><span>5G <i>&#x1F50B;</i></span></div>
+                <div class="fp-scroll">
+                <div class="fp-row fp-spread" style="align-items:flex-start;margin-bottom:6px">
+                  <div><b class="fp-stitle">Community</b><div class="fp-mute">Challenges, friends &amp; achievements</div></div>
+                  <span class="fp-btn">+ Join Challenge</span>
+                </div>
+                <div class="fp-mute fp-sec">Active Challenges</div>
+                <div class="fp-row" style="margin-bottom:8px">
+                  <div class="fp-card c3"><div class="fp-ico">&#x1F45F;</div><b class="fp-t">Weekly 70K</b><div class="fp-mute">3d left</div><div class="fp-track"><i style="--w:72%"></i></div><div class="fp-go">72%</div></div>
+                  <div class="fp-card c3"><div class="fp-ico" style="color:var(--ct-accent2)">&#x1F4A7;</div><b class="fp-t">Hydration Month</b><div class="fp-mute">18d left</div><div class="fp-track tk2"><i style="--w:54%"></i></div><div class="fp-go" style="color:var(--ct-accent2)">54%</div></div>
+                </div>
+                <div class="fp-card fp-lb" style="margin-bottom:8px">
+                  <div class="fp-row fp-spread" style="margin-bottom:6px"><b class="fp-t">&#x1F3C6; Leaderboard</b><span class="fp-chip amber">This Week</span></div>
+                  <div class="fp-lbrow"><span aria-hidden="true">&#x1F947;</span><i class="fp-av">&#x1F469;&#x200D;&#x1F9B1;</i><b>Ananya S.</b><em>86,420</em></div>
+                  <div class="fp-lbrow"><span aria-hidden="true">&#x1F948;</span><i class="fp-av">&#x1F9D1;&#x200D;&#x1F9B0;</i><b>Rahul K.</b><em>79,100</em></div>
+                  <div class="fp-lbrow"><span aria-hidden="true">&#x1F949;</span><i class="fp-av">&#x1F469;&#x200D;&#x1F9B3;</i><b>Priya M.</b><em>71,850</em></div>
+                  <div class="fp-lbrow you"><span aria-hidden="true">8&#xFE0F;&#x20E3;</span><i class="fp-av">&#x1F9D1;</i><b>You</b><em>65,947</em></div>
+                </div>
+                <div class="fp-mute fp-sec">Friends Activity</div>
+                <div class="fp-card fp-feed"><div class="fp-row fp-gap"><span class="fp-av sm">&#x1F9D1;&#x200D;&#x1F9B0;</span><div><div class="fp-fname">Rahul K.</div><div class="fp-mute">2h ago</div></div></div><p>Completed a 5K run in 28:30 &#x1F3C3; Personal best!</p></div>
+                <div class="fp-card fp-feed"><div class="fp-row fp-gap"><span class="fp-av sm">&#x1F469;&#x200D;&#x1F9B3;</span><div><div class="fp-fname">Priya M.</div><div class="fp-mute">4h ago</div></div></div><p>Hit 100-day streak! &#x1F525; So proud of this milestone.</p></div>
+                <div class="fp-card fp-feed"><div class="fp-row fp-gap"><span class="fp-av sm">&#x1F9D1;&#x200D;&#x1F9B1;</span><div><div class="fp-fname">Dev R.</div><div class="fp-mute">6h ago</div></div></div><p>New PR: Bench Press 100kg &#x1F4AA; Strength is growing!</p></div>
+                </div>
+                <div class="fp-nav ind3">
+                <div class="fp-tab"><span>&#x1F3E0;</span>Home</div>
+                <div class="fp-tab"><span>&#x1F4CA;</span>Progress</div>
+                <div class="fp-tab on"><span>&#x1F465;</span>Community</div>
+                <div class="fp-tab"><span>&#x1F464;</span>Account</div>
+                </div>
+                </div>
+                <!-- SCREEN 04 &#xB7; ACCOUNT -->
+                <div class="fp-screen" aria-hidden="true" data-screen="account">
+                <div class="fp-status"><span>9:41</span><span class="fp-dots">&#x25CF;&#x25CF;&#x25CF;</span><span>5G <i>&#x1F50B;</i></span></div>
+                <div class="fp-scroll">
+                <div class="fp-row fp-spread" style="margin-bottom:8px">
+                  <span class="fp-ico tiny" aria-hidden="true">&#x2699;&#xFE0F;</span>
+                  <b class="fp-stitle">Account</b>
+                  <span class="fp-ico tiny" aria-hidden="true"></span>
+                </div>
+                <div class="fp-card fp-prof" style="margin-bottom:8px">
+                  <span class="fp-prof-av" aria-hidden="true">&#x1F469;&#x200D;&#x1F9B1;</span>
+                  <div class="fp-name">Ananya Sharma</div>
+                  <div class="fp-mute">ananya@fitpulse.app</div>
+                  <span class="fp-chip lime">&#x2B50; FitPulse Pro</span>
+                  <div class="fp-prof-stats">
+                  <div><b>247</b><span>Workouts</span></div>
+                  <div><b>100&#x1F525;</b><span>Day Streak</span></div>
+                  <div><b>18</b><span>Badges</span></div>
+                  </div>
+                </div>
+                <div class="fp-menu">
+                  <div class="fp-men"><span class="fp-ico tiny">&#x270F;&#xFE0F;</span><div><b>Edit Profile</b><small>Update your information</small></div><i aria-hidden="true">&#x203A;</i></div>
+                  <div class="fp-men"><span class="fp-ico tiny">&#x1F3AF;</span><div><b>Goals &amp; Progress</b><small>Track your milestones</small></div><i aria-hidden="true">&#x203A;</i></div>
+                  <div class="fp-men"><span class="fp-ico tiny">&#x231A;</span><div><b>Device Sync</b><small>Manage connected devices</small></div><i aria-hidden="true">&#x203A;</i></div>
+                  <div class="fp-men"><span class="fp-ico tiny">&#x2B50;</span><div><b>Subscription</b><small>FitPulse Pro &#xB7; Active</small></div><i aria-hidden="true">&#x203A;</i></div>
+                  <div class="fp-men"><span class="fp-ico tiny">&#x1F3C6;</span><div><b>Personal Records</b><small>Your best performances</small></div><i aria-hidden="true">&#x203A;</i></div>
+                  <div class="fp-men"><span class="fp-ico tiny">&#x1F512;</span><div><b>Privacy &amp; Security</b><small>Manage your data</small></div><i aria-hidden="true">&#x203A;</i></div>
+                  <div class="fp-men out"><span class="fp-ico tiny">&#x1F6AA;</span><div><b style="color:var(--ct-red)">Sign Out</b></div></div>
+                </div>
+                <div class="fp-foot">FitPulse v3.2.1 &#xB7; Member since Jan 2024</div>
+                </div>
+                <div class="fp-nav ind4">
+                <div class="fp-tab"><span>&#x1F3E0;</span>Home</div>
+                <div class="fp-tab"><span>&#x1F4CA;</span>Progress</div>
+                <div class="fp-tab"><span>&#x1F465;</span>Community</div>
+                <div class="fp-tab on"><span>&#x1F464;</span>Account</div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="fp-theme-layer fp-theme-light" aria-hidden="true"></div>
+          </div>
+        </div>
 
         <section class="detail-block">
           <h4><span class="bar" aria-hidden="true"></span>Overview</h4>

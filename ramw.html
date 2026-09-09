@@ -16,6 +16,13 @@
 
   <link rel="stylesheet" href="CSS/main.css" />
   <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  <noscript><style>
+    /* No-JS fallback: collapse the cinematic scroll section back to a normal hero */
+    .cinematic-scroll-section { height: auto !important; }
+    .sticky-cinematic-frame { position: static !important; height: auto !important; min-height: 100vh; }
+    #cinematicCanvas, .cinematic-shade, .cinematic-loader { display: none !important; }
+    .hero.cinematic-scroll-section .hero__inner { margin-top: 0 !important; }
+  </style></noscript>
   <link rel="icon" type="image/png" href="Thubnails/ri.png" />
 </head>
 <body>
@@ -54,8 +61,23 @@
   </header>
 
   <main>
-    <!-- ================= Hero ================= -->
-    <section class="hero" aria-label="Introduction">
+    <!-- ================= Hero · Cinematic scroll section =================
+         The Unreal Engine WebP frame sequence (frames/frame_0001.webp …
+         frame_1438.webp) is scrubbed across this section's scroll range:
+         top of section = frame 1 · bottom of section = frame 1438.
+         The canvas + shade stay pinned (.sticky-cinematic-frame) while the
+         existing hero content scrolls above them. -->
+    <section class="hero cinematic-scroll-section" aria-label="Introduction">
+      <div class="sticky-cinematic-frame" aria-hidden="true">
+        <canvas id="cinematicCanvas"></canvas>
+        <div class="cinematic-shade"></div>
+        <div class="cinematic-loader" id="cinematicLoader" role="status" aria-live="polite" hidden>
+          <span class="cinematic-loader__ring" aria-hidden="true"></span>
+          <span class="cinematic-loader__label">Loading cinematic sequence…</span>
+          <span class="cinematic-loader__pct" id="cinematicLoaderPct">0%</span>
+        </div>
+      </div>
+
       <div class="container hero__inner">
         <div class="hero__content">
           <p class="hero__eyebrow"><span class="dot" aria-hidden="true"></span> Gameplay Systems · Plugins · UI</p>
@@ -1134,5 +1156,6 @@
   </div>
 
   <script src="JS/main.js"></script>
+  <script src="JS/cinematic.js" defer></script>
 </body>
 </html>

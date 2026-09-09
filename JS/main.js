@@ -197,3 +197,67 @@
     yearEls.forEach(function (el) { el.textContent = year; });
   }
 })();
+/* ==========================================================================
+   FitPulse phone showreel (figma.html)
+   Cycles the four phone screens through dark/light themes, mirroring the
+   Fitnplus case-study cover animation (HOME·D → HOME·L → PROGRESS·D → …).
+   Runs inside its own closure so a failure in the shared startup code can
+   never disable the showreel.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var reduced = false;
+  try {
+    reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  } catch (e) {
+    /* older browsers — fall through and animate anyway */
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll(".fp-phone"), function (phone) {
+    if (phone.getAttribute("data-fp-ready") === "1") return;
+    phone.setAttribute("data-fp-ready", "1");
+
+    var darkLayer = phone.querySelector(".fp-theme-dark");
+    var lightLayer = phone.querySelector(".fp-theme-light");
+    var wrap = darkLayer ? darkLayer.querySelector(".fp-screens") : null;
+    if (!wrap) return;
+
+    /* Mirror the four app screens into the light layer so the
+       dark ⇄ light crossfade swaps colors inside the same layout. */
+    var clone = wrap.cloneNode(true);
+    if (lightLayer && clone) lightLayer.appendChild(clone);
+
+    var darkScreens = Array.prototype.slice.call(wrap.querySelectorAll(".fp-screen"));
+    var lightScreens = clone ? Array.prototype.slice.call(clone.querySelectorAll(".fp-screen")) : [];
+    var total = darkScreens.length;
+    if (!total) return;
+
+    function setActive(list, i) {
+      list.forEach(function (s, k) {
+        s.classList.toggle("s-active", k === i);
+        s.setAttribute("aria-hidden", k === i ? "false" : "true");
+      });
+    }
+
+    /* screen = floor(state/2), theme = state%2 (0 dark, 1 light) */
+    var state = 0;
+    function applyState() {
+      var screen = Math.floor(state / 2) % total;
+      var lightOn = (state % 2) === 1;
+      setActive(darkScreens, screen);
+      setActive(lightScreens, screen);
+      if (darkLayer) darkLayer.style.opacity = lightOn ? "0" : "1";
+      if (lightLayer) lightLayer.style.opacity = lightOn ? "1" : "0";
+    }
+
+    setActive(darkScreens, 0);
+    setActive(lightScreens, 0);
+    if (reduced) return;
+
+    window.setInterval(function () {
+      state = (state + 1) % (total * 2);
+      applyState();
+    }, 5000);
+  });
+})();
